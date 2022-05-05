@@ -60,7 +60,9 @@ class RegisterPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                AuthForm()
+                AuthForm(),
+                ElevatedButton(onPressed: (){Navigator.pop(context,"/home");}, child: Text("volta"))
+
               ],
             ),
           )
