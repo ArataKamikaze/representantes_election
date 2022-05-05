@@ -1,4 +1,5 @@
 /*import 'package:bitsdojo_window/bitsdojo_window.dart';*/
+import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 import 'login_controller.dart';
 
@@ -14,7 +15,7 @@ class _LoginPageState extends State<LoginPage> {
     primaryColor: const Color.fromARGB(255, 19, 80, 134),
     backgroundColor: const Color(0xFFF9FAFC),
   );
-/*
+
   final buttonColors = WindowButtonColors(
     iconNormal: Colors.white,
     mouseOver: const Color.fromARGB(36, 5, 5, 5),
@@ -22,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
     iconMouseOver: const Color.fromARGB(255, 19, 80, 134),
     iconMouseDown: const Color.fromARGB(255, 255, 255, 255),
   );
-*/
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -34,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Container(
                 height: 30,
-                /*child: MoveWindow(
+                child: MoveWindow(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
@@ -45,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
                       CloseWindowButton(colors: buttonColors),
                     ],
                   ),
-                ),*/
+                ),
               ),
               Expanded(
                 child: Row(
