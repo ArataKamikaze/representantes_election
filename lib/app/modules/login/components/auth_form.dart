@@ -19,6 +19,7 @@ class _AuthFormState extends State<AuthForm> {
   bool _isLoading = false;
 
   AuthMode _authMode = AuthMode.Login;
+  // ignore: prefer_final_fields
   Map<String, String> _authData = {
     'email': '',
     'password': '',
@@ -52,6 +53,10 @@ class _AuthFormState extends State<AuthForm> {
 
     if (_isLogin()) {
       //login
+      await auth.login(
+        _authData['email']!,
+        _authData['password']!,
+      );
     } else {
       //register
       await auth.signup(
@@ -80,7 +85,7 @@ class _AuthFormState extends State<AuthForm> {
           child: Column(
             children: [
               TextFormField(
-                decoration: InputDecoration(labelText: 'E-mail'),
+                decoration: const InputDecoration(labelText: 'E-mail'),
                 keyboardType: TextInputType.emailAddress,
                 onSaved: (email) => _authData['email'] = email ?? '',
                 validator: (_email) {
@@ -92,7 +97,7 @@ class _AuthFormState extends State<AuthForm> {
                 },
               ),
               TextFormField(
-                decoration: InputDecoration(labelText: 'Senha'),
+                decoration: const InputDecoration(labelText: 'Senha'),
                 keyboardType: TextInputType.emailAddress,
                 obscureText: true,
                 controller: _passwordController,
@@ -107,7 +112,8 @@ class _AuthFormState extends State<AuthForm> {
               ),
               if (_isSignup())
                 TextFormField(
-                  decoration: InputDecoration(labelText: 'Confirmar Senha'),
+                  decoration:
+                      const InputDecoration(labelText: 'Confirmar Senha'),
                   keyboardType: TextInputType.emailAddress,
                   obscureText: true,
                   validator: _isLogin()
@@ -120,9 +126,9 @@ class _AuthFormState extends State<AuthForm> {
                           return null;
                         },
                 ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               if (_isLoading)
-                CircularProgressIndicator()
+                const CircularProgressIndicator()
               else
                 ElevatedButton(
                   onPressed: _submit,
@@ -139,7 +145,7 @@ class _AuthFormState extends State<AuthForm> {
                     ),
                   ),
                 ),
-              Spacer(),
+              const Spacer(),
               TextButton(
                 onPressed: _switchAuthMode,
                 child: Text(
