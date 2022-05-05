@@ -110,7 +110,6 @@ class _AuthFormState extends State<AuthForm> {
                   decoration: InputDecoration(labelText: 'Confirmar Senha'),
                   keyboardType: TextInputType.emailAddress,
                   obscureText: true,
-                  controller: _passwordController,
                   validator: _isLogin()
                       ? null
                       : (_password) {
