@@ -14,17 +14,7 @@ class RegisterPage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(
-              colors: [
-                Color.fromRGBO(215, 117, 255, 0.5),
-                Color.fromRGBO(215, 188, 177, 0.9)
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            )),
-          ),
+          
           SizedBox(
             width: double.infinity,
             child: Column(
