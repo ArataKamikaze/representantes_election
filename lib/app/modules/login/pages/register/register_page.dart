@@ -4,17 +4,15 @@ import 'package:flutter/material.dart';
 
 import '../../components/auth_form.dart';
 
-
-
 class RegisterPage extends StatelessWidget {
   const RegisterPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: Stack(
         children: [
-          
           SizedBox(
             width: double.infinity,
             child: Column(
@@ -32,7 +30,7 @@ class RegisterPage extends StatelessWidget {
                   transform: Matrix4.rotationZ(-8 * pi / 180)..translate(-10.0),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: Colors.deepOrange.shade900,
+                      color: Colors.blueAccent,
                       boxShadow: const [
                         BoxShadow(
                           blurRadius: 8,
@@ -51,8 +49,11 @@ class RegisterPage extends StatelessWidget {
                   ),
                 ),
                 AuthForm(),
-                ElevatedButton(onPressed: (){Navigator.pop(context,"/home");}, child: Text("volta"))
-
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context, "/home");
+                    },
+                    child: Text("volta"))
               ],
             ),
           )
