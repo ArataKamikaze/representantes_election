@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'modules/login/pages/login/login_page.dart';
 import 'modules/login/pages/register/auth.dart';
 import 'modules/home/pages/home/home_page.dart';
+import 'modules/login/pages/register/auth_or_home_page.dart';
 import 'modules/login/pages/register/register_page.dart';
 
 class App extends StatelessWidget {
@@ -25,9 +26,9 @@ class App extends StatelessWidget {
         ),
         initialRoute: "/",
         routes: {
-          "/":(context) => LoginPage(),
+          "/": (context) => LoginPage(),
           "/home": (context) => HomePage(),
-          "/register": (context) => RegisterPage(),
+          "/register": (context) => AuthOrHomePage(),
         },
       ),
     );

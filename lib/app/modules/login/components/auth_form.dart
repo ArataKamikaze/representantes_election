@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../pages/register/auth.dart';
 import '../pages/register/auth_exception.dart';
+import '../pages/register/auth_or_home_page.dart';
 
 enum AuthMode { Signup, Login }
 
