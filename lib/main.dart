@@ -13,7 +13,7 @@ void main() async{
       ..minSize = Size(640, 360)
       ..size = Size(720, 540)
       ..alignment = Alignment.center
-      ..maximize()
+      ..maximize()  
       ..show();
     }
   );

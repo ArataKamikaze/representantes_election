@@ -63,6 +63,8 @@ flutter:
           weight: 500
         - asset: assets/fonts/Outfit-ExtraLight.ttf
           weight: 400
+  assets:
+    - assets/images/logo.png
   
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

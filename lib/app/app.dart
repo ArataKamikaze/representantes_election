@@ -21,8 +21,19 @@ class App extends StatelessWidget {
       child: MaterialApp(
         title: "Eleição de representantes",
         theme: ThemeData(
-          primarySwatch: Colors.blue,
-          backgroundColor: Colors.red,
+          colorScheme: const ColorScheme(
+            brightness: Brightness.light, 
+            primary:     Color(0xff135086),
+            onPrimary:   Color(0xFFFFFFFF),
+            secondary:   Color(0xFF6C757D),
+            onSecondary: Color(0xFFFFFFFF),
+            error:       Color(0xffF9002D),
+            onError:     Color(0xFFFFFFFF),
+            background:  Color(0xffF9FAFC),
+            onBackground:Color(0xff6C757D),
+            surface:     Color(0xFFFFFFFF),
+            onSurface:   Color(0xFF6C757D),
+          ),
         ),
         initialRoute: "/",
         routes: {

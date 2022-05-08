@@ -1,5 +1,7 @@
 /*import 'package:bitsdojo_window/bitsdojo_window.dart';*/
 import 'package:bitsdojo_window/bitsdojo_window.dart';
+import 'package:provider/provider.dart';
+import '../../../../components/input_field.dart';
 import 'package:flutter/material.dart';
 import 'login_controller.dart';
 
@@ -11,18 +13,12 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  var theme = ThemeData(
-    primaryColor: const Color.fromARGB(255, 19, 80, 134),
-    backgroundColor: const Color(0xFFF9FAFC),
-  );
+  late LoginController controller;
 
-  final buttonColors = WindowButtonColors(
-    iconNormal: Colors.white,
-    mouseOver: const Color.fromARGB(36, 5, 5, 5),
-    mouseDown: const Color.fromARGB(12, 0, 0, 0),
-    iconMouseOver: const Color.fromARGB(255, 19, 80, 134),
-    iconMouseDown: const Color.fromARGB(255, 255, 255, 255),
-  );
+  @override
+  void initState() {
+    controller = LoginController();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,11 +35,11 @@ class _LoginPageState extends State<LoginPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      MinimizeWindowButton(colors: buttonColors),
+                      MinimizeWindowButton(colors: controller.buttonColors),
                       MaximizeWindowButton(
-                        colors: buttonColors,
+                        colors: controller.buttonColors,
                       ),
-                      CloseWindowButton(colors: buttonColors),
+                      CloseWindowButton(colors: controller.buttonColors),
                     ],
                   ),
                 ),
@@ -93,43 +89,78 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     Container(
                       padding:
-                          EdgeInsets.symmetric(horizontal: 80, vertical: 80),
+                          EdgeInsets.symmetric(horizontal: 70, vertical: 70),
                       color: Colors.white,
-                      height: 600,
+                      height: 550,
                       width: 500,
-                      child: Column(
-                        children: [
-                          Container(
-                            width: 100,
-                            height: 100,
-                            decoration: const BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: NetworkImage(
-                                    "https://cdn.discordapp.com/attachments/585265336874696717/969649503676280882/Screenshot_14_2.png"),
+                      child: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 100,
+                              width: 100,
+                              child: Image.asset("assets/images/logo.png")
+                              ),
+                            /*Container(
+                              width: 100,
+                              height: 100,
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  fit: BoxFit.fill,
+                                  image: AssetImage(
+                                      "assets/images/logo.png"),
+                                ),
+                              ),
+                            ),*/
+                            SizedBox(height: 27),
+                            Container(
+                              width: double.infinity,
+                              child: Text("Usuário:",style: TextStyle(color: Theme.of(context).colorScheme.secondary,),),
+                            ),
+                            SizedBox(height: 5),
+                            InputField(
+                              controller: controller.userController,
+                              prefix: Icon(
+                                Icons.perm_identity,
+                                size: 20,
+                                color: Theme.of(context).colorScheme.onBackground,
                               ),
                             ),
-                          ),
-                          TextField(),
-                          TextField(),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Text("Esqueci minha senha"),
-                              ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.pushNamed(context, '/register');
-                                  },
-                                  child: Text("Register"))
-                            ],
-                          ),
-                          ElevatedButton(
-                              onPressed: () {
-                                Navigator.pushNamed(context, '/home');
-                              },
-                              child: Text("Login"))
-                        ],
+                            SizedBox(height: 27),
+                            Container(
+                              width: double.infinity,
+                              child: Text("Senha:",style: TextStyle(color: Theme.of(context).colorScheme.secondary,)),
+                            ),
+                            SizedBox(height: 5),
+                            InputField(
+                              obscureText: true,
+                              controller: controller.passController,
+                              prefix: Icon(
+                                Icons.lock_outline,
+                                size: 20,
+                                color: Theme.of(context).colorScheme.onBackground,
+                              ),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Text("Esqueci minha senha"),
+                                ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.pushNamed(context, '/register');
+                                    },
+                                    child: Text("Register"))
+                              ],
+                            ),
+                            ElevatedButton(
+                                onPressed: () {
+                                  Navigator.pushNamed(context, '/home');
+                                },
+                                child: Text("Login"))
+                          ],
+                        ),
                       ),
                     ),
                   ],
