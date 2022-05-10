@@ -121,6 +121,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             SizedBox(height: 5),
                             InputField(
+                              context: context,
                               controller: controller.userController,
                               prefix: Icon(
                                 Icons.perm_identity,
@@ -135,6 +136,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             SizedBox(height: 5),
                             InputField(
+                              context: context,
                               obscureText: true,
                               controller: controller.passController,
                               prefix: Icon(
