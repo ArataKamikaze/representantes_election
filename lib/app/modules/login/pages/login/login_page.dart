@@ -1,5 +1,6 @@
 /*import 'package:bitsdojo_window/bitsdojo_window.dart';*/
 import 'package:bitsdojo_window/bitsdojo_window.dart';
+import 'package:eleicao_representante/app/modules/login/components/teste.dart';
 import 'package:provider/provider.dart';
 import '../../../../components/input_field.dart';
 import 'package:flutter/material.dart';
@@ -94,7 +95,9 @@ class _LoginPageState extends State<LoginPage> {
                       height: 550,
                       width: 500,
                       child: Center(
-                        child: Column(
+                        child: Teste(),
+
+                        /*Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
@@ -163,6 +166,7 @@ class _LoginPageState extends State<LoginPage> {
                                 child: Text("Login"))
                           ],
                         ),
+*/
                       ),
                     ),
                   ],

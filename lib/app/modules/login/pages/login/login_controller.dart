@@ -1,8 +1,7 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 
-class LoginController{
-  
+class LoginController {
   var userController = TextEditingController();
   var passController = TextEditingController();
   final buttonColors = WindowButtonColors(
