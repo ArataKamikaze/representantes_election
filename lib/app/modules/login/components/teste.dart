@@ -95,7 +95,6 @@ class _TesteState extends State<Teste> {
 
   @override
   Widget build(BuildContext context) {
-    final deviceSize = MediaQuery.of(context).size;
     return Form(
       key: _formKey,
       child: Column(
@@ -164,7 +163,7 @@ class _TesteState extends State<Teste> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text("Esqueci minha senha"),
-              ElevatedButton(
+              TextButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/register');
                   },
