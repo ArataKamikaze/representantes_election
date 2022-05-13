@@ -12,6 +12,6 @@ class AuthOrHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Auth auth = Provider.of(context);
-    return auth.isAuth ? HomePage() : RegisterPage();
+    return auth.isAuth ? HomePage() : LoginPage();
   }
 }

@@ -51,7 +51,6 @@ class LoginController {
     } else {
       _authMode = AuthMode.Login;
     }
-    ;
   }
 
   void _showErrorDialog(String msg) {

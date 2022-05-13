@@ -49,7 +49,7 @@ class RegisterPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Teste(),
+                AuthForm(),
                 ElevatedButton(
                     onPressed: () {
                       Navigator.pop(context, "/home");
