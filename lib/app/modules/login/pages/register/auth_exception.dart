@@ -1,4 +1,7 @@
 class AuthException implements Exception {
+
+  // Classe para tratamento de erros padrões do firebase
+  
   static const Map<String, String> errors = {
     'EMAIL_EXISTS': 'E-mail já cadastrado.',
     'OPERATION_NOT_ALLOWED': 'Operação não permida.',

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class SideBar extends StatelessWidget {
   const SideBar({Key? key}) : super(key: key);
-
+// Apenas componentes visuais
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -45,17 +45,27 @@ class SideBar extends StatelessWidget {
         ),
         Column(
           children: [
-            TextButton(onPressed: (){}, child: Text("Inicio")),
-            SizedBox(height: 25,),
-            TextButton(onPressed: (){}, child: Text("Candidatar-se")),
-            SizedBox(height: 25,),
-            TextButton(onPressed: (){}, child: Text("Perfil"))
+            TextButton(onPressed: () {}, child: Text("Inicio")),
+            SizedBox(
+              height: 25,
+            ),
+            TextButton(onPressed: () {}, child: Text("Candidatar-se")),
+            SizedBox(
+              height: 25,
+            ),
+            TextButton(onPressed: () {}, child: Text("Perfil"))
           ],
         ),
-        SizedBox(height: 250,),
+        SizedBox(
+          height: 250,
+        ),
         Column(
           children: [
-            ElevatedButton(onPressed: (){Navigator.pop(context, '/home');}, child: Text("Inicio")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context, '/AuthOrHomePage');
+                },
+                child: Text("Inicio")),
           ],
         )
       ],

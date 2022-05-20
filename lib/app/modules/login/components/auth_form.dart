@@ -9,7 +9,7 @@ enum AuthMode { Signup, Login }
 
 class AuthForm extends StatefulWidget {
   const AuthForm({Key? key}) : super(key: key);
-
+// APENAS TESTES
   @override
   _AuthFormState createState() => _AuthFormState();
 }
