@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CandidateInfo extends StatefulWidget {
-  const CandidateInfo({Key? key}) : super(key: key);
+class CandidateSumary extends StatefulWidget {
+  const CandidateSumary({Key? key}) : super(key: key);
 
   @override
-  State<CandidateInfo> createState() => _CandidateInfoState();
+  State<CandidateSumary> createState() => _CandidateSumaryState();
 }
 
-class _CandidateInfoState extends State<CandidateInfo> {
+class _CandidateSumaryState extends State<CandidateSumary> {
   bool _check = false;
   @override
   Widget build(BuildContext context) {

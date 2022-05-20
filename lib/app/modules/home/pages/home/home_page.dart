@@ -1,7 +1,8 @@
 /*import 'package:bitsdojo_window/bitsdojo_window.dart';*/
 import 'package:bitsdojo_window/bitsdojo_window.dart';
-import 'package:eleicao_representante/app/components/button.dart';
-import 'package:eleicao_representante/app/modules/home/pages/home/components/candidateInfo.dart';
+import '../../../../components/button.dart';
+import 'components/candidate_info.dart';
+import 'components/candidate_sumary.dart';
 
 import '../../components/sidebar.dart';
 import 'home_controller.dart';
@@ -16,6 +17,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var controller = HomeController();
+  List<Widget> candidates = [
+    CandidateInfo(),
+    
+  ];
 
   var theme = ThemeData(
     primaryColor: const Color.fromARGB(255, 19, 80, 134),
@@ -94,7 +99,7 @@ class _HomePageState extends State<HomePage> {
                             child: Column(
                               children: [
                                 Container(
-                                  height: 100,
+                                  height: 70,
                                   padding: EdgeInsets.all(15),
                                   child: Align(
                                     alignment: Alignment.centerLeft,
@@ -108,21 +113,12 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                                 Expanded(
-                                  child: SingleChildScrollView(
-                                    child: Column(
-                                      children: [
-                                        CandidateInfo(),
-                                        CandidateInfo(),
-                                        CandidateInfo(),
-                                        CandidateInfo(),
-                                        CandidateInfo(),
-                                        CandidateInfo(),
-                                        CandidateInfo(),
-                                        CandidateInfo(),
-                                        CandidateInfo(),
-                                      ],
-                                    ),
-                                  ),
+                                  child: ListView.builder(
+                                    itemCount: candidates.length,
+                                    itemBuilder: (context, index){
+                                      return candidates[index];
+                                    }
+                                  )
                                 )
                               ],
                             ),
