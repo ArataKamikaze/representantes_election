@@ -19,6 +19,6 @@ void main() async{
   );
   await Window.setEffect(
     effect: WindowEffect.acrylic,
-    color: Color.fromARGB(1, 13, 38, 45),
+    color: Color.fromARGB(50, 13, 38, 45),
   );
 }

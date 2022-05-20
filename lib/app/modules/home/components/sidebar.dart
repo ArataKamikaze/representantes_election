@@ -1,3 +1,4 @@
+import 'package:eleicao_representante/app/components/button.dart';
 import 'package:flutter/material.dart';
 
 class SideBar extends StatelessWidget {
@@ -6,8 +7,11 @@ class SideBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
+        SizedBox(
+          height: 32,
+        ),
         Column(
           children: [
             Container(
@@ -36,38 +40,68 @@ class SideBar extends StatelessWidget {
             const SizedBox(
               height: 12,
             ),
-            Container(
-              height: 1,
-              width: 150,
-              color: Colors.white,
-            )
-          ],
-        ),
-        Column(
-          children: [
-            TextButton(onPressed: () {}, child: Text("Inicio")),
-            SizedBox(
-              height: 25,
-            ),
-            TextButton(onPressed: () {}, child: Text("Candidatar-se")),
-            SizedBox(
-              height: 25,
-            ),
-            TextButton(onPressed: () {}, child: Text("Perfil"))
           ],
         ),
         SizedBox(
-          height: 250,
+          height: 35,
         ),
-        Column(
-          children: [
-            ElevatedButton(
+        Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              
+              Container(
+                child: Column(
+                  children: [
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Inicio",
+                        style: TextStyle(
+                          color: Colors.white
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Candidatar-se",
+                        style: TextStyle(
+                          color: Colors.white
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Perfil",
+                        style: TextStyle(
+                          color: Colors.white
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              MainButton(
                 onPressed: () {
                   Navigator.pop(context, '/AuthOrHomePage');
                 },
-                child: Text("Inicio")),
-          ],
-        )
+                child: Text("Inicio"),
+                isPrimary: false,
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 15,
+        ),
       ],
     );
   }
