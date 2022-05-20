@@ -3,12 +3,16 @@ import 'package:eleicao_representante/app/modules/login/pages/register/auth_exce
 import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
 
+/*Temos a classe Auth com a herança do ChangeNotifier, changenotifier é a 
+própriedade que permite mandar notificações para mudança de estado para qualquer widget ou função que queira ouvir*/
+
 class Auth with ChangeNotifier {
+//Temos os atributos de autenticação recebidos pelo firebase 
   String? _token;
   String? _email;
   String? _uid;
   DateTime? _expiryDate;
-
+//Getters de autenticação, token, e-mail e id
   bool get isAuth {
     final isValid = _expiryDate?.isAfter(DateTime.now()) ?? false;
     return _token != null && isValid;
@@ -25,6 +29,8 @@ class Auth with ChangeNotifier {
   String? get uid {
     return isAuth ? _uid : null;
   }
+
+  //Função de autenticação, fragmentamos a url de login e de registro para maior organização e fizemos um tratamento de erro recebidos pelo firebase
 
   Future<void> _authenticate(
       String email, String password, String urlFragment) async {
@@ -59,10 +65,13 @@ class Auth with ChangeNotifier {
     }
   }
 
+// Metodo de registro
+
   Future<void> signup(String email, String password) async {
     return _authenticate(email, password, 'signUp');
   }
 
+// Metodo de login
   Future<void> login(String email, String password) async {
     return _authenticate(email, password, 'signInWithPassword');
   }

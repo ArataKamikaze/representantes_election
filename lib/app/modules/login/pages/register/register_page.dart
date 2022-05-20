@@ -7,7 +7,7 @@ import '../../components/auth_form.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({Key? key}) : super(key: key);
-
+// APENAS TESTES
   @override
   Widget build(BuildContext context) {
     return Scaffold(

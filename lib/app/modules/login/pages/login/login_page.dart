@@ -6,6 +6,8 @@ import '../../../../components/input_field.dart';
 import 'package:flutter/material.dart';
 import 'login_controller.dart';
 
+// CLASSE PARA CRIAÇÃO DO FRONT-END
+
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
 
@@ -15,12 +17,13 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   late LoginController controller;
-
+// Iniciação do controller
   @override
   void initState() {
     controller = LoginController(context);
   }
 
+// Criação de um scaffold, widget de criação de tela padrão, depois tem a chamada de widgets do pack de widgets para personalização de aparência do windows
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,6 +45,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ),
+          // Todos widgets para criação de interface gráfica
           Expanded(
             child: Row(
               children: [
@@ -113,10 +117,12 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ),
                           SizedBox(height: 5),
+                          // Chamada de um textfield componetizado que chama as funções do controller para autenticação
                           InputField(
                             context: context,
                             controller: controller.userController,
-                            onSaved: (email) => controller.authData['email'] = email ?? '',
+                            onSaved: (email) =>
+                                controller.authData['email'] = email ?? '',
                             validator: controller.userValidator,
                             prefix: Icon(
                               Icons.perm_identity,
@@ -134,11 +140,13 @@ class _LoginPageState extends State<LoginPage> {
                                 )),
                           ),
                           SizedBox(height: 5),
+                          // Chamada de um textfield componetizado que chama as funções do controller para autenticação
                           InputField(
                             context: context,
                             obscureText: true,
                             controller: controller.passController,
-                            onSaved: (password) => controller.authData['password'] = password ?? '',
+                            onSaved: (password) => controller
+                                .authData['password'] = password ?? '',
                             validator: controller.passwordValidator,
                             prefix: Icon(
                               Icons.lock_outline,
@@ -150,6 +158,7 @@ class _LoginPageState extends State<LoginPage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
+                              // Botoes componetizados, chamada de rota para mudança de tela dos aplicativos
                               TextButton(
                                 onPressed: () {
                                   Navigator.pushNamed(context, '/register');
@@ -168,7 +177,9 @@ class _LoginPageState extends State<LoginPage> {
                           if (controller.isLoading)
                             const CircularProgressIndicator()
                           else
-                            ElevatedButton(onPressed: controller.submit, child: Text("Login"))
+                            ElevatedButton(
+                                onPressed: controller.submit,
+                                child: Text("Login"))
                         ],
                       ),
                     ),

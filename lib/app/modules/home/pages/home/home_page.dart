@@ -28,6 +28,8 @@ class _HomePageState extends State<HomePage> {
     iconMouseDown: const Color.fromARGB(255, 255, 255, 255),
   );
 
+
+// Apenas componentes visuais
   @override
   Widget build(BuildContext context) {
     return Scaffold(

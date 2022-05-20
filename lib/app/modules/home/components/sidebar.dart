@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class SideBar extends StatelessWidget {
   const SideBar({Key? key}) : super(key: key);
-
+// Apenas componentes visuais
   @override
   Widget build(BuildContext context) {
     return Column(
