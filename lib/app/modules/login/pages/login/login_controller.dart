@@ -59,7 +59,6 @@ class LoginController {
   // ignore: unused_element
   bool _isSignup() => _authMode == AuthMode.Signup;
 
-
 // Método para fazer a mudança de estado para login.
   // ignore: unused_element
   void _switchAuthMode() {
@@ -119,10 +118,12 @@ class LoginController {
       _showErrorDialog(error.toString());
     } catch (error) {
       _showErrorDialog('Ocorreu um erro inesperado!');
+      print(error);
     }
 
     isLoading = false;
   }
+
 // Cores padrões dos botões de login.
   final buttonColors = WindowButtonColors(
     iconNormal: Colors.white,
