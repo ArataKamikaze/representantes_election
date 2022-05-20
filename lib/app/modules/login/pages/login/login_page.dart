@@ -87,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 70, vertical: 70),
+                  padding: EdgeInsets.symmetric(horizontal: 70),
                   color: Colors.white,
                   height: 550,
                   width: 500,

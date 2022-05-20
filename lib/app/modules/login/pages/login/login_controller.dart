@@ -96,6 +96,7 @@ class LoginController {
           authData['password']!,
         );
       }
+      Navigator.pushNamed(context, "/register");
     } on AuthException catch (error) {
       _showErrorDialog(error.toString());
     } catch (error) {
