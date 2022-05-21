@@ -9,7 +9,7 @@ class MainButton extends StatelessWidget {
     Key? key,
     required this.onPressed,
     required this.child,
-    bool this.isPrimary = true
+    this.isPrimary = true
   }) : super(
           key: key,
       );
@@ -21,9 +21,9 @@ class MainButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           elevation: 0,
           shadowColor: Colors.transparent,
-          primary: isPrimary ? Color(0xff135085) : Color(0x11ffffff),
-          fixedSize: Size(200, 35),
-          shape: RoundedRectangleBorder(
+          primary: isPrimary ? const Color(0xff135085) : const Color(0x11ffffff),
+          fixedSize: const Size(200, 35),
+          shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.zero
           )
         )

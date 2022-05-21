@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'modules/login/pages/login/login_page.dart';
 import 'modules/login/pages/register/auth.dart';
 import 'modules/home/pages/home/home_page.dart';
 import 'modules/login/pages/register/auth_or_home_page.dart';
-import 'modules/login/pages/register/register_page.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -37,7 +35,7 @@ class App extends StatelessWidget {
         ),
         initialRoute: "/",
         routes: {
-          "/": (context) => AuthOrHomePage(),
+          "/": (context) => const AuthOrHomePage(),
           "/home": (context) => HomePage(),
         },
       ),

@@ -10,8 +10,8 @@ void main() async{
   doWhenWindowReady(
     () {
       appWindow
-      ..minSize = Size(640, 360)
-      ..size = Size(720, 540)
+      ..minSize = const Size(640, 360)
+      ..size = const Size(720, 540)
       ..alignment = Alignment.center
       ..maximize()  
       ..show();
@@ -19,6 +19,6 @@ void main() async{
   );
   await Window.setEffect(
     effect: WindowEffect.acrylic,
-    color: Color.fromARGB(50, 13, 38, 45),
+    color:const Color.fromARGB(50, 13, 38, 45),
   );
 }

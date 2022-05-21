@@ -5,9 +5,9 @@ class InputField extends TextFormField {
   Function(String?)? onSaved;
   String? Function(String?)? validator;
   bool obscureText = false;
-  String label;
-  Widget? prefix;
-  Widget? sufix;
+  final String label;
+  final Widget? prefix;
+  final Widget? sufix;
 
   static BuildContext? context;
   
