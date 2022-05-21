@@ -19,7 +19,14 @@ class _HomePageState extends State<HomePage> {
   var controller = HomeController();
   List<Widget> candidates = [
     CandidateInfo(),
-    
+    CandidateSumary(),
+    CandidateSumary(),
+    CandidateSumary(),
+    CandidateSumary(),
+    CandidateSumary(),
+    CandidateSumary(),
+    CandidateSumary(),
+    CandidateSumary(),
   ];
 
   var theme = ThemeData(

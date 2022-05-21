@@ -1,5 +1,6 @@
 /*import 'package:bitsdojo_window/bitsdojo_window.dart';*/
 import 'package:bitsdojo_window/bitsdojo_window.dart';
+import 'package:eleicao_representante/app/components/button.dart';
 import 'package:eleicao_representante/app/modules/login/components/teste.dart';
 import 'package:provider/provider.dart';
 import '../../../../components/input_field.dart';
@@ -177,9 +178,7 @@ class _LoginPageState extends State<LoginPage> {
                           if (controller.isLoading)
                             const CircularProgressIndicator()
                           else
-                            ElevatedButton(
-                                onPressed: controller.submit,
-                                child: Text("Login"))
+                            MainButton(onPressed: controller.submit, child: Text("Login"))
                         ],
                       ),
                     ),

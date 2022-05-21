@@ -10,6 +10,10 @@ class CandidateInfo extends StatefulWidget {
 class _CandidateInfoState extends State<CandidateInfo> {
   String lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque. Ut diam quam, semper iaculis condimentum ac, vestibulum eu nisl.";
   bool _check = false;
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -93,14 +97,17 @@ class _CandidateInfoState extends State<CandidateInfo> {
                 width: 200,
                 color: Colors.green,
               ),
-              Column(
-                children: [
-                  Text("Descrição"),
-                  Expanded(
-                  child: Text(lorem),
+              
+              Container(
+                height: 300,
+                width: 700,
+                child: Column(
+                    children: [
+                      Text("Descrição"),
+                      Expanded(child: Text(lorem))
+                    ],
                   ),
-                ],
-              )
+              ),
             ],
           ),
         )
