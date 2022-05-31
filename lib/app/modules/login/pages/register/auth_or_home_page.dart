@@ -3,7 +3,7 @@ import 'package:eleicao_representante/app/modules/login/pages/register/register_
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../home/pages/home/home_page.dart';
+import '../../../main/main_page.dart';
 import 'auth.dart';
 
 class AuthOrHomePage extends StatelessWidget {
