@@ -9,7 +9,7 @@ class SideBar extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        SizedBox(
+        const SizedBox(
           height: 32,
         ),
         Column(

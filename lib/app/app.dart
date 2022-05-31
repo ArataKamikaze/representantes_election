@@ -35,12 +35,8 @@ class App extends StatelessWidget {
         ),
         initialRoute: "/",
         routes: {
-<<<<<<< HEAD
-          "/": (context) => const AuthOrHomePage(),
-=======
           "/": (context) => AuthOrHomePage(),
           "/register": (context) => AuthOrHomePage(),
->>>>>>> 105af154b5d44409ea009663ced976532d2b0619
           "/home": (context) => HomePage(),
         },
       ),
