@@ -1,31 +1,26 @@
 /*import 'package:bitsdojo_window/bitsdojo_window.dart';*/
-import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:eleicao_representante/app/modules/main/components/navigation_button.dart';
 import 'package:eleicao_representante/app/modules/main/containers/home/home_container.dart';
 import '../../components/button.dart';
-import 'components/candidate_info.dart';
-import 'components/candidate_sumary.dart';
 
-import 'containers/candidacy/candidacy_container.dart';
-import 'containers/profile/profile_container.dart';
 import 'main_controller.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  Widget currentContainer = HomeContainer();
+  Widget currentContainer = const HomeContainer();
 
   late var controller = MainController();
 
   setContainer(key) {
     setState(() {
-      currentContainer = controller.setContainer(key)!;
+      currentContainer = controller.setContainer(key);
     });
   }
 
@@ -36,7 +31,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.transparent,
       body: Row(
         children: [
-          Container(
+          SizedBox(
             width: 250,
             height: double.infinity,
             child: Column(
@@ -75,19 +70,19 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 35,
                 ),
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
+                      SizedBox(
                         child: Column(
                           children: [
                             NavigationButton(
                               onPressed: () => setContainer("home"),
-                              child: Text(
+                              child: const Text(
                                 "Inicio",
                                 style: TextStyle(color: Colors.white),
                               ),
@@ -95,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                             
                             NavigationButton(
                               onPressed: () => setContainer("candidacy"),
-                              child: Text(
+                              child: const Text(
                                 "Candidatar-se",
                                 style: TextStyle(color: Colors.white),
                               ),
@@ -103,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                             
                             NavigationButton(
                               onPressed: () => setContainer("profile"),
-                              child: Text(
+                              child: const Text(
                                 "Perfil",
                                 style: TextStyle(color: Colors.white),
                               ),
@@ -115,13 +110,13 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {
                           Navigator.pop(context, '/AuthOrHomePage');
                         },
-                        child: Text("Inicio"),
+                        child: const Text("Inicio"),
                         isPrimary: false,
                       ),
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
               ],

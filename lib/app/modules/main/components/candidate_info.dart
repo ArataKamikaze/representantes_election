@@ -19,7 +19,7 @@ class _CandidateInfoState extends State<CandidateInfo> {
     return Column(
       children: [
         Container(
-          color: Color(0xff135085),
+          color: const Color(0xff135085),
           height: 75,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -28,7 +28,7 @@ class _CandidateInfoState extends State<CandidateInfo> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
+                children: const [
                   Text(
                     "Nome",
                     style: TextStyle(
@@ -46,7 +46,7 @@ class _CandidateInfoState extends State<CandidateInfo> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
+                children: const [
                   Text(
                     "Matrícula",
                     style: TextStyle(
@@ -64,7 +64,7 @@ class _CandidateInfoState extends State<CandidateInfo> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
+                children: const [
                   Text(
                     "Sala",
                     style: TextStyle(
@@ -98,12 +98,12 @@ class _CandidateInfoState extends State<CandidateInfo> {
                 color: Colors.green,
               ),
               
-              Container(
+              SizedBox(
                 height: 300,
                 width: 700,
                 child: Column(
                     children: [
-                      Text("Descrição"),
+                      const Text("Descrição"),
                       Expanded(child: Text(lorem))
                     ],
                   ),

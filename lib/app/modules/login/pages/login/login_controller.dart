@@ -118,6 +118,7 @@ class LoginController {
       _showErrorDialog(error.toString());
     } catch (error) {
       _showErrorDialog('Ocorreu um erro inesperado!');
+      // ignore: avoid_print
       print(error);
     }
 

@@ -7,14 +7,13 @@ import 'containers/home/home_container.dart';
 
 class MainController{
   Map<String,Widget> containers = {
-    "home" : HomeContainer(),
-    "profile" : ProfileContainer(),
-    "candidacy": CandidacyContainer(),
+    "home" : const HomeContainer(),
+    "profile" : const ProfileContainer(),
+    "candidacy": const CandidacyContainer(),
   };
 
   Widget setContainer(String key){
       return  containers[key]!;
-      print(key);
   }
 
 }

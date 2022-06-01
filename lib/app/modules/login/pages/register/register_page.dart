@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:eleicao_representante/app/modules/login/components/teste.dart';
 import 'package:flutter/material.dart';
 
 import '../../components/auth_form.dart';
@@ -49,12 +48,12 @@ class RegisterPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                AuthForm(),
+                const AuthForm(),
                 ElevatedButton(
                     onPressed: () {
                       Navigator.pop(context, "/home");
                     },
-                    child: Text("volta"))
+                    child: const Text("volta"))
               ],
             ),
           )

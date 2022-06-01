@@ -1,8 +1,6 @@
 /*import 'package:bitsdojo_window/bitsdojo_window.dart';*/
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:eleicao_representante/app/components/button.dart';
-import 'package:eleicao_representante/app/modules/login/components/teste.dart';
-import 'package:provider/provider.dart';
 import '../../../../components/input_field.dart';
 import 'package:flutter/material.dart';
 import 'login_controller.dart';
@@ -10,7 +8,7 @@ import 'login_controller.dart';
 // CLASSE PARA CRIAÇÃO DO FRONT-END
 
 class LoginPage extends StatefulWidget {
-  LoginPage({Key? key}) : super(key: key);
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -19,11 +17,12 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   late LoginController controller;
 // Iniciação do controller
+  
   @override
   void initState() {
     controller = LoginController(context);
+    super.initState();
   }
-
 // Criação de um scaffold, widget de criação de tela padrão, depois tem a chamada de widgets do pack de widgets para personalização de aparência do windows
   @override
   Widget build(BuildContext context) {
@@ -31,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
       backgroundColor: Colors.transparent,
       body: Column(
         children: [
-          Container(
+          SizedBox(
             height: 30,
             child: MoveWindow(
               child: Row(
@@ -52,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.only(left: 50),
+                    padding: const EdgeInsets.only(left: 50),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 70),
+                  padding: const EdgeInsets.symmetric(horizontal: 70),
                   color: Colors.white,
                   height: 550,
                   width: 500,
@@ -103,12 +102,12 @@ class _LoginPageState extends State<LoginPage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Container(
+                          SizedBox(
                               height: 100,
                               width: 100,
                               child: Image.asset("assets/images/logo.png")),
-                          SizedBox(height: 27),
-                          Container(
+                          const SizedBox(height: 27),
+                          SizedBox(
                             width: double.infinity,
                             child: Text(
                               "Usuário:",
@@ -117,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             ),
                           ),
-                          SizedBox(height: 5),
+                          const SizedBox(height: 5),
                           // Chamada de um textfield componetizado que chama as funções do controller para autenticação
                           InputField(
                             context: context,
@@ -131,8 +130,8 @@ class _LoginPageState extends State<LoginPage> {
                               color: Theme.of(context).colorScheme.onBackground,
                             ),
                           ),
-                          SizedBox(height: 27),
-                          Container(
+                          const SizedBox(height: 27),
+                          SizedBox(
                             width: double.infinity,
                             child: Text("Senha:",
                                 style: TextStyle(
@@ -140,7 +139,7 @@ class _LoginPageState extends State<LoginPage> {
                                       Theme.of(context).colorScheme.secondary,
                                 )),
                           ),
-                          SizedBox(height: 5),
+                          const SizedBox(height: 5),
                           // Chamada de um textfield componetizado que chama as funções do controller para autenticação
                           InputField(
                             context: context,
@@ -155,7 +154,7 @@ class _LoginPageState extends State<LoginPage> {
                               color: Theme.of(context).colorScheme.onBackground,
                             ),
                           ),
-                          SizedBox(height: 5),
+                          const SizedBox(height: 5),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -164,21 +163,21 @@ class _LoginPageState extends State<LoginPage> {
                                 onPressed: () {
                                   Navigator.pushNamed(context, '/register');
                                 },
-                                child: Text("Esqueci minha senha"),
+                                child: const Text("Esqueci minha senha"),
                               ),
                               TextButton(
                                 onPressed: () {
                                   Navigator.pushNamed(context, '/register');
                                 },
-                                child: Text("Register"),
+                                child: const Text("Register"),
                               )
                             ],
                           ),
-                          SizedBox(height: 5),
+                          const SizedBox(height: 5),
                           if (controller.isLoading)
                             const CircularProgressIndicator()
                           else
-                            MainButton(onPressed: controller.submit, child: Text("Login"))
+                            MainButton(onPressed: controller.submit, child: const Text("Login"))
                         ],
                       ),
                     ),

@@ -1,8 +1,17 @@
+// ignore_for_file: overridden_fields
+
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class InputField extends TextFormField {
+  
+  @override
   TextEditingController controller;
+  
+  @override
   Function(String?)? onSaved;
+  
+  @override
   String? Function(String?)? validator;
   bool obscureText = false;
   final String label;
@@ -24,14 +33,14 @@ class InputField extends TextFormField {
     }) : super(
       key: key,
       textAlignVertical: TextAlignVertical.bottom,
-      style: TextStyle(color: Color(0xFF6C757D),),
+      style: const TextStyle(color: Color(0xFF6C757D),),
         decoration: InputDecoration(
           fillColor: Theme.of(context).colorScheme.surface,
           filled: true,
           prefixIcon: prefix,
           suffixIcon: sufix,
           hintText: label,
-          contentPadding: EdgeInsets.only(bottom: 16),
+          contentPadding: const EdgeInsets.only(bottom: 16),
           hintStyle: TextStyle(
             color: Theme.of(context).colorScheme.onBackground,
           ),

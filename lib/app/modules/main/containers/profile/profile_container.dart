@@ -11,21 +11,17 @@ class ProfileContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> candidates = [
-      CandidateInfo(),
-      CandidateSumary(),
-      CandidateSumary(),
-      CandidateSumary(),
-      CandidateSumary(),
-      CandidateSumary(),
-      CandidateSumary(),
-      CandidateSumary(),
-      CandidateSumary(),
+      const CandidateInfo(),
+      const CandidateSumary(),
+      const CandidateSumary(),
+      const CandidateSumary(),
+      const CandidateSumary(),
+      const CandidateSumary(),
+      const CandidateSumary(),
+      const CandidateSumary(),
+      const CandidateSumary(),
     ];
 
-    var theme = ThemeData(
-      primaryColor: const Color.fromARGB(255, 19, 80, 134),
-      backgroundColor: const Color(0xFFF9FAFC),
-    );
 
     final buttonColors = WindowButtonColors(
       iconNormal: Colors.white,
@@ -55,29 +51,29 @@ class ProfileContainer extends StatelessWidget {
           child: Container(
             width: double.infinity,
             height: double.infinity,
-            padding: EdgeInsets.symmetric(horizontal: 80, vertical: 50),
-            color: Color(0xFFFFFFFF),
+            padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 50),
+            color: const Color(0xFFFFFFFF),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
                   height: 60,
                   width: double.infinity,
-                  child: Align(
+                  child: const Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       "Eleições - 5º Período CC5NA",
                       style: TextStyle(color: Color(0xff6C757D), fontSize: 20),
                     ),
                   ),
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(
-                        color: Color(0xff6C757D),
+                        color: const Color(0xff6C757D),
                       )),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 65,
                 ),
                 Expanded(
@@ -86,8 +82,8 @@ class ProfileContainer extends StatelessWidget {
                       children: [
                         Container(
                           height: 70,
-                          padding: EdgeInsets.all(15),
-                          child: Align(
+                          padding: const EdgeInsets.all(15),
+                          child: const Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
                               "Profile",
@@ -109,14 +105,14 @@ class ProfileContainer extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(
-                          color: Color(0xff6C757D),
+                          color: const Color(0xff6C757D),
                         )),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                MainButton(onPressed: () {}, child: Text("Confirmar Voto"))
+                MainButton(onPressed: () {}, child: const Text("Confirmar Voto"))
               ],
             ),
           ),

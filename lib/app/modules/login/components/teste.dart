@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../pages/login/login_controller.dart';
 import '../../../components/input_field.dart';
 import '../pages/register/auth.dart';
 import '../pages/register/auth_exception.dart';
-import '../pages/register/auth_or_home_page.dart';
 
-enum AuthMode { Signup, Login }
+enum AuthMode { signUp, login }
 
 class Teste extends StatefulWidget {
   const Teste({Key? key}) : super(key: key);
@@ -22,36 +20,36 @@ class _TesteState extends State<Teste> {
   final _formKey = GlobalKey<FormState>();
   bool _isLoading = false;
 
-  AuthMode _authMode = AuthMode.Login;
+  final AuthMode _authMode = AuthMode.login;
   // ignore: prefer_final_fields
   Map<String, String> _authData = {
     'email': '',
     'password': '',
   };
 
-  bool _isLogin() => _authMode == AuthMode.Login;
-  bool _isSignup() => _authMode == AuthMode.Signup;
+  bool _isLogin() => _authMode == AuthMode.login;
+  // bool _isSignup() => _authMode == AuthMode.Signup;
 
-  void _switchAuthMode() {
-    setState(() {
-      if (_isLogin()) {
-        _authMode = AuthMode.Signup;
-      } else {
-        _authMode = AuthMode.Login;
-      }
-    });
-  }
+  // void _switchAuthMode() {
+  //   setState(() {
+  //     if (_isLogin()) {
+  //       _authMode = AuthMode.Signup;
+  //     } else {
+  //       _authMode = AuthMode.Login;
+  //     }
+  //   });
+  // }
 
   void _showErrorDialog(String msg) {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: Text('Ocorreu um erro'),
+        title: const Text('Ocorreu um erro'),
         content: Text(msg),
         actions: [
           TextButton(
               onPressed: () => Navigator.of(context, rootNavigator: true).pop(),
-              child: Text('Fechar'))
+              child: const Text('Fechar'))
         ],
       ),
     );
@@ -100,12 +98,12 @@ class _TesteState extends State<Teste> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
+          SizedBox(
               height: 100,
               width: 100,
               child: Image.asset("assets/images/logo.png")),
-          SizedBox(height: 27),
-          Container(
+          const SizedBox(height: 27),
+          SizedBox(
             width: double.infinity,
             child: Text(
               "Usuário:",
@@ -114,7 +112,7 @@ class _TesteState extends State<Teste> {
               ),
             ),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           InputField(
             context: context,
             controller: _loginController,
@@ -132,15 +130,15 @@ class _TesteState extends State<Teste> {
               color: Theme.of(context).colorScheme.onBackground,
             ),
           ),
-          SizedBox(height: 27),
-          Container(
+          const SizedBox(height: 27),
+          SizedBox(
             width: double.infinity,
             child: Text("Senha:",
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.secondary,
                 )),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           InputField(
             context: context,
             obscureText: true,
@@ -162,18 +160,18 @@ class _TesteState extends State<Teste> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text("Esqueci minha senha"),
+              const Text("Esqueci minha senha"),
               TextButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/register');
                   },
-                  child: Text("Register"))
+                  child: const Text("Register"))
             ],
           ),
           if (_isLoading)
             const CircularProgressIndicator()
           else
-            ElevatedButton(onPressed: _submit, child: Text("Login"))
+            ElevatedButton(onPressed: _submit, child: const Text("Login"))
         ],
       ),
     );

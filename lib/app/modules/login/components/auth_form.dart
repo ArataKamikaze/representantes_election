@@ -3,9 +3,8 @@ import 'package:provider/provider.dart';
 
 import '../pages/register/auth.dart';
 import '../pages/register/auth_exception.dart';
-import '../pages/register/auth_or_home_page.dart';
 
-enum AuthMode { Signup, Login }
+enum AuthMode { signUp, login }
 
 class AuthForm extends StatefulWidget {
   const AuthForm({Key? key}) : super(key: key);
@@ -20,22 +19,22 @@ class _AuthFormState extends State<AuthForm> {
   final _formKey = GlobalKey<FormState>();
   bool _isLoading = false;
 
-  AuthMode _authMode = AuthMode.Login;
+  AuthMode _authMode = AuthMode.login;
   // ignore: prefer_final_fields
   Map<String, String> _authData = {
     'email': '',
     'password': '',
   };
 
-  bool _isLogin() => _authMode == AuthMode.Login;
-  bool _isSignup() => _authMode == AuthMode.Signup;
+  bool _isLogin() => _authMode == AuthMode.login;
+  bool _isSignup() => _authMode == AuthMode.signUp;
 
   void _switchAuthMode() {
     setState(() {
       if (_isLogin()) {
-        _authMode = AuthMode.Signup;
+        _authMode = AuthMode.signUp;
       } else {
-        _authMode = AuthMode.Login;
+        _authMode = AuthMode.login;
       }
     });
   }
@@ -44,12 +43,12 @@ class _AuthFormState extends State<AuthForm> {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: Text('Ocorreu um erro'),
+        title: const Text('Ocorreu um erro'),
         content: Text(msg),
         actions: [
           TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text('Fechar'))
+              child: const Text('Fechar'))
         ],
       ),
     );
@@ -156,7 +155,7 @@ class _AuthFormState extends State<AuthForm> {
                 ElevatedButton(
                   onPressed: _submit,
                   child: Text(
-                    _authMode == AuthMode.Login ? 'ENTRAR' : 'REGISTRAR',
+                    _authMode == AuthMode.login ? 'ENTRAR' : 'REGISTRAR',
                   ),
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(

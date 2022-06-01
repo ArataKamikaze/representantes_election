@@ -17,7 +17,7 @@ class _CandidateSumaryState extends State<CandidateSumary> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: Container(
                 width: 55,
                 height: 55,
@@ -33,28 +33,28 @@ class _CandidateSumaryState extends State<CandidateSumary> {
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 Text("Nome"),
                 Text("Jeremy Elbertson"),
               ],
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 Text("Matrícula"),
                 Text("E019548"),
               ],
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 Text("Sala"),
                 Text("CC4MA"),
               ],
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 Text("Bio"),
                 Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit ..."),
               ],
@@ -67,7 +67,7 @@ class _CandidateSumaryState extends State<CandidateSumary> {
           ],
         ),
         Container(
-          color: Color(0xffDDDFE0),
+          color: const Color(0xffDDDFE0),
           height: 1,
           width: double.infinity,
         )
