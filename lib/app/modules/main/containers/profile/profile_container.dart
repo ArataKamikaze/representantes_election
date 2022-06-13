@@ -18,17 +18,6 @@ class _ProfileContainerState extends State<ProfileContainer> {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> candidates = [
-      const CandidateInfo(),
-      const CandidateSumary(),
-      const CandidateSumary(),
-      const CandidateSumary(),
-      const CandidateSumary(),
-      const CandidateSumary(),
-      const CandidateSumary(),
-      const CandidateSumary(),
-      const CandidateSumary(),
-    ];
 
     final buttonColors = WindowButtonColors(
       iconNormal: Colors.white,
@@ -129,7 +118,7 @@ class _ProfileContainerState extends State<ProfileContainer> {
                                       Text("E00001")
                                     ],
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 30,
                                   ),
                                   Row(
@@ -141,7 +130,7 @@ class _ProfileContainerState extends State<ProfileContainer> {
                                       Text("ArataKamikaze da Cunha")
                                     ],
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 30,
                                   ),
                                   Row(
@@ -154,15 +143,15 @@ class _ProfileContainerState extends State<ProfileContainer> {
                                           "ArataKamikaze.da.cunha420.69@electronicMail.com")
                                     ],
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 30,
                                   ),
                                   MainButton(
                                       onPressed: () {},
-                                      child: Text("Alterar Senha"))
+                                      child: const Text("Alterar Senha"))
                                 ],
                               ),
-                        SizedBox(
+                        const SizedBox(
                           height: 30,
                         ),
                         InkWell(
@@ -197,9 +186,9 @@ class _ProfileContainerState extends State<ProfileContainer> {
                             : Column(
                                 children: [
                                   Container(
-                                    padding: EdgeInsets.symmetric(
+                                    padding: const EdgeInsets.symmetric(
                                         horizontal: 15, vertical: 5),
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       border: Border(
                                         bottom: BorderSide(
                                           width: 2.0,
@@ -225,21 +214,21 @@ class _ProfileContainerState extends State<ProfileContainer> {
                                                 ),
                                               ),
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 15,
                                             ),
-                                            Text(
+                                            const Text(
                                                 "Robertinho Giraldes - E03821"),
                                           ],
                                         ),
-                                        Text("2021 - 2º semestre - CC4NB "),
+                                        const Text("2021 - 2º semestre - CC4NB "),
                                       ],
                                     ),
                                   ),
                                   Container(
-                                    padding: EdgeInsets.symmetric(
+                                    padding: const EdgeInsets.symmetric(
                                         horizontal: 15, vertical: 5),
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       border: Border(
                                         bottom: BorderSide(
                                           width: 2.0,
@@ -265,21 +254,21 @@ class _ProfileContainerState extends State<ProfileContainer> {
                                                 ),
                                               ),
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 15,
                                             ),
-                                            Text(
+                                            const Text(
                                                 "Robertinho Giraldes - E03821"),
                                           ],
                                         ),
-                                        Text("2021 - 2º semestre - CC4NB "),
+                                        const Text("2021 - 2º semestre - CC4NB "),
                                       ],
                                     ),
                                   ),
                                   Container(
-                                    padding: EdgeInsets.symmetric(
+                                    padding: const EdgeInsets.symmetric(
                                         horizontal: 15, vertical: 5),
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       border: Border(
                                         bottom: BorderSide(
                                           width: 2.0,
@@ -305,21 +294,21 @@ class _ProfileContainerState extends State<ProfileContainer> {
                                                 ),
                                               ),
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 15,
                                             ),
-                                            Text(
+                                            const Text(
                                                 "Robertinho Giraldes - E03821"),
                                           ],
                                         ),
-                                        Text("2021 - 2º semestre - CC4NB "),
+                                        const Text("2021 - 2º semestre - CC4NB "),
                                       ],
                                     ),
                                   ),
                                   Container(
-                                    padding: EdgeInsets.symmetric(
+                                    padding: const EdgeInsets.symmetric(
                                         horizontal: 15, vertical: 5),
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       border: Border(
                                         bottom: BorderSide(
                                           width: 2.0,
@@ -345,21 +334,21 @@ class _ProfileContainerState extends State<ProfileContainer> {
                                                 ),
                                               ),
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 15,
                                             ),
-                                            Text(
+                                            const Text(
                                                 "Robertinho Giraldes - E03821"),
                                           ],
                                         ),
-                                        Text("2021 - 2º semestre - CC4NB "),
+                                        const Text("2021 - 2º semestre - CC4NB "),
                                       ],
                                     ),
                                   ),
                                   Container(
-                                    padding: EdgeInsets.symmetric(
+                                    padding: const EdgeInsets.symmetric(
                                         horizontal: 15, vertical: 5),
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       border: Border(
                                         bottom: BorderSide(
                                           width: 2.0,
@@ -385,14 +374,14 @@ class _ProfileContainerState extends State<ProfileContainer> {
                                                 ),
                                               ),
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 15,
                                             ),
-                                            Text(
+                                            const Text(
                                                 "Robertinho Giraldes - E03821"),
                                           ],
                                         ),
-                                        Text("2021 - 2º semestre - CC4NB "),
+                                        const Text("2021 - 2º semestre - CC4NB "),
                                       ],
                                     ),
                                   ),
