@@ -42,6 +42,7 @@ class App extends StatelessWidget {
           "/home": (context) => const HomePage(),
           "/candidacy": (context) => const CandidacyContainer(),
           "/profile": (context) => const ProfileContainer(),
+          "/register2": (context) => const RegisterPage(),
         },
       ),
     );
