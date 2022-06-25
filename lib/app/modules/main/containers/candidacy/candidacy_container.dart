@@ -81,32 +81,35 @@ class CandidacyContainer extends StatelessWidget {
                     child: Column(
                       children: [
                         CandidateHeader(name: name,matricula: matricula,sala: sala,),
-                        SingleChildScrollView(
-                          child: Column(
-                            children: [
-                              SizedBox(height: 20,),
-                              Text("Escreva um pouco sobre você"),
-                              SizedBox(height: 20,),
-                              Container(
-                                padding: EdgeInsets.symmetric(horizontal: 50),
-                                child: InputField(
-                                context: context,
-                                controller: bioController,
-                                isTextArea: true,
-                              )),
-                              SizedBox(height: 30,),
-                              Text(
-                                  "Para efetivar a sua candidatura à representante, apresente brevemente as suas motivações"),
-                                  SizedBox(height: 20,),
-                              Container(
-                                padding: EdgeInsets.symmetric(horizontal: 50),
-                                child: InputField(
+                        Expanded(
+                          child: SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                SizedBox(height: 20,),
+                                Text("Escreva um pouco sobre você"),
+                                SizedBox(height: 20,),
+                                Container(
+                                  padding: EdgeInsets.symmetric(horizontal: 50),
+                                  child: InputField(
                                   context: context,
-                                  controller: motivationController,
+                                  controller: bioController,
                                   isTextArea: true,
+                                )),
+                                SizedBox(height: 30,),
+                                Text(
+                                    "Para efetivar a sua candidatura à representante, apresente brevemente as suas motivações"),
+                                    SizedBox(height: 20,),
+                                Container(
+                                  padding: EdgeInsets.symmetric(horizontal: 50),
+                                  child: InputField(
+                                    context: context,
+                                    controller: motivationController,
+                                    isTextArea: true,
+                                  ),
                                 ),
-                              ),
-                            ],
+                                SizedBox(height: 50,),
+                              ],
+                            ),
                           ),
                         )
                       ],

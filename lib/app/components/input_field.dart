@@ -65,6 +65,7 @@ class InputField extends TextFormField {
         controller: controller,
         onSaved: onSaved,
         validator:validator,
+        minLines: isTextArea? 6 : 1,
         maxLines: isTextArea ? null : 1,
       );
 }
