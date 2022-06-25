@@ -3,20 +3,20 @@ import 'package:eleicao_representante/app/modules/main/components/navigation_but
 import 'package:eleicao_representante/app/modules/main/containers/home/home_container.dart';
 import '../../components/button.dart';
 
-import 'main_controller.dart';
+import 'admin_controller.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class AdminPage extends StatefulWidget {
+  const AdminPage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<AdminPage> createState() => _AdminPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _AdminPageState extends State<AdminPage> {
   Widget currentContainer = const HomeContainer();
 
-  late var controller = MainController();
+  late var controller = AdminController();
 
   setContainer(key) {
     setState(() {
@@ -94,14 +94,6 @@ class _HomePageState extends State<HomePage> {
                             ),
                             
                             NavigationButton(
-                              onPressed: () => setContainer("candidacy"),
-                              child: const Text(
-                                "Candidatar-se",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ),
-                            
-                            NavigationButton(
                               onPressed: () => setContainer("profile"),
                               child: const Text(
                                 "Perfil",
@@ -110,14 +102,6 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ],
                         ),
-                      ),
-                      
-                      MainButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/adminPage');
-                        },
-                        child: const Text("admin"),
-                        isPrimary: false,
                       ),
                       MainButton(
                         onPressed: () {
