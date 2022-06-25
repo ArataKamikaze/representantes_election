@@ -14,6 +14,7 @@ class InputField extends TextFormField {
   @override
   String? Function(String?)? validator;
   bool obscureText = false;
+  bool isTextArea = false;
   final String label;
   final Widget? prefix;
   final Widget? sufix;
@@ -29,9 +30,11 @@ class InputField extends TextFormField {
     this.obscureText = false,
     this.label = "",
     this.prefix,
-    this.sufix
+    this.sufix,
+    this.isTextArea = false
     }) : super(
       key: key,
+      
       textAlignVertical: TextAlignVertical.bottom,
       style: const TextStyle(color: Color(0xFF6C757D),),
         decoration: InputDecoration(
@@ -57,11 +60,11 @@ class InputField extends TextFormField {
             borderRadius: BorderRadius.zero
           ),
         ),
-        keyboardType: TextInputType.emailAddress,
+        keyboardType: isTextArea? TextInputType.multiline : TextInputType.emailAddress,
         obscureText: obscureText,
         controller: controller,
         onSaved: onSaved,
         validator:validator,
+        maxLines: isTextArea ? null : 1,
       );
-
 }

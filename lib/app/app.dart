@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'modules/login/pages/register/register_page.dart';
 import 'modules/main/containers/candidacy/candidacy_container.dart';
 import 'modules/main/containers/profile/profile_container.dart';
 import 'modules/login/pages/register/auth.dart';
@@ -40,7 +41,7 @@ class App extends StatelessWidget {
           "/": (context) => const AuthOrHomePage(),
           "/register": (context) => const AuthOrHomePage(),
           "/home": (context) => const HomePage(),
-          "/candidacy": (context) => const CandidacyContainer(),
+          "/candidacy": (context) => CandidacyContainer(),
           "/profile": (context) => const ProfileContainer(),
           "/register2": (context) => const RegisterPage(),
         },

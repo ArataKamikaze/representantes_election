@@ -9,7 +9,7 @@ class MainController{
   Map<String,Widget> containers = {
     "home" : const HomeContainer(),
     "profile" : const ProfileContainer(),
-    "candidacy": const CandidacyContainer(),
+    "candidacy": CandidacyContainer(),
   };
 
   Widget setContainer(String key){

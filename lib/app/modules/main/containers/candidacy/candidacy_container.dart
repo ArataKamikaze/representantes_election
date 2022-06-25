@@ -1,4 +1,6 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
+import 'package:eleicao_representante/app/components/input_field.dart';
+import 'package:eleicao_representante/app/modules/main/components/candidate_header.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../components/button.dart';
@@ -6,23 +8,21 @@ import '../../components/candidate_info.dart';
 import '../../components/candidate_sumary.dart';
 
 class CandidacyContainer extends StatelessWidget {
-  const CandidacyContainer({Key? key}) : super(key: key);
+  CandidacyContainer({Key? key}) : super(key: key);
+  
+
+  //variáveis para db\\
+  var bioController = new TextEditingController();
+  var motivationController = new TextEditingController();
+  List<String> date = ["25/06", "25/07"];
+  var name = "Jeremy Elbertson";
+  var matricula = "E00110";
+  var sala = "CC4MA";
+
+  //variaveis para db\\
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> candidates = [
-      const CandidateInfo(),
-      const CandidateSumary(),
-      const CandidateSumary(),
-      const CandidateSumary(),
-      const CandidateSumary(),
-      const CandidateSumary(),
-      const CandidateSumary(),
-      const CandidateSumary(),
-      const CandidateSumary(),
-    ];
-
-
     final buttonColors = WindowButtonColors(
       iconNormal: Colors.white,
       mouseOver: const Color.fromARGB(36, 5, 5, 5),
@@ -59,10 +59,10 @@ class CandidacyContainer extends StatelessWidget {
                 Container(
                   height: 60,
                   width: double.infinity,
-                  child: const Align(
+                  child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      "Eleições - 5º Período CC5NA",
+                      "Formulário de Candidatura ${date[0]} até ${date[1]}",
                       style: TextStyle(color: Color(0xff6C757D), fontSize: 20),
                     ),
                   ),
@@ -74,32 +74,41 @@ class CandidacyContainer extends StatelessWidget {
                       )),
                 ),
                 const SizedBox(
-                  height: 65,
+                  height: 35,
                 ),
                 Expanded(
                   child: Container(
                     child: Column(
                       children: [
-                        Container(
-                          height: 70,
-                          padding: const EdgeInsets.all(15),
-                          child: const Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              "Candidatura",
-                              style: TextStyle(
-                                color: Color(0xff6C757D),
-                                fontSize: 20,
+                        CandidateHeader(name: name,matricula: matricula,sala: sala,),
+                        SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              SizedBox(height: 20,),
+                              Text("Escreva um pouco sobre você"),
+                              SizedBox(height: 20,),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 50),
+                                child: InputField(
+                                context: context,
+                                controller: bioController,
+                                isTextArea: true,
+                              )),
+                              SizedBox(height: 30,),
+                              Text(
+                                  "Para efetivar a sua candidatura à representante, apresente brevemente as suas motivações"),
+                                  SizedBox(height: 20,),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 50),
+                                child: InputField(
+                                  context: context,
+                                  controller: motivationController,
+                                  isTextArea: true,
+                                ),
                               ),
-                            ),
+                            ],
                           ),
-                        ),
-                        Expanded(
-                            child: ListView.builder(
-                                itemCount: candidates.length,
-                                itemBuilder: (context, index) {
-                                  return candidates[index];
-                                }))
+                        )
                       ],
                     ),
                     decoration: BoxDecoration(
@@ -112,7 +121,15 @@ class CandidacyContainer extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                MainButton(onPressed: () {}, child: const Text("Confirmar Voto"))
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    MainButton(
+                        onPressed: () {},
+                        child: const Text("Confirmar Candidatura")),
+                    MainButton(onPressed: () {}, child: const Text("Cancelar")),
+                  ],
+                )
               ],
             ),
           ),

@@ -11,15 +11,15 @@ class HomeContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> candidates = [
-      const CandidateInfo(),
-      const CandidateSumary(),
-      const CandidateSumary(),
-      const CandidateSumary(),
-      const CandidateSumary(),
-      const CandidateSumary(),
-      const CandidateSumary(),
-      const CandidateSumary(),
-      const CandidateSumary(),
+       CandidateInfo(),
+       CandidateSumary(),
+       CandidateSumary(),
+       CandidateSumary(),
+       CandidateSumary(),
+       CandidateSumary(),
+       CandidateSumary(),
+       CandidateSumary(),
+       CandidateSumary(),
     ];
 
 
