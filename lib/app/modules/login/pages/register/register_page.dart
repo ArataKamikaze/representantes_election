@@ -13,6 +13,14 @@ class RegisterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     firedart.CollectionReference testeCollection =
         firedart.Firestore.instance.collection('teste');
+
+    Future<List<firedart.Document>> getTestes() async {
+      List<firedart.Document> testes =
+          await testeCollection.orderBy('name').get();
+
+      return testes;
+    }
+
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: Stack(
@@ -53,6 +61,13 @@ class RegisterPage extends StatelessWidget {
                   ),
                 ),
                 const AuthForm(),
+                FutureBuilder<List<firedart.Document>>(
+                  future: getTestes(),
+                  builder: (BuildContext context,
+                      AsyncSnapshot<List<firedart.Document>> snapshot) {
+                    return const Text('Placeholder');
+                  },
+                ),
                 ElevatedButton(
                   onPressed: () async {
                     final testes = await testeCollection.get();
