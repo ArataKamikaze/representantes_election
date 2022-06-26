@@ -1,14 +1,18 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-
+import 'package:eleicao_representante/app/app.dart';
 import '../../components/auth_form.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firedart/firedart.dart' as firedart;
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({Key? key}) : super(key: key);
 // APENAS TESTES
   @override
   Widget build(BuildContext context) {
+    firedart.CollectionReference testeCollection =
+        firedart.Firestore.instance.collection('teste');
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: Stack(
@@ -50,10 +54,40 @@ class RegisterPage extends StatelessWidget {
                 ),
                 const AuthForm(),
                 ElevatedButton(
-                    onPressed: () {
-                      Navigator.pop(context, "/home");
-                    },
-                    child: const Text("volta"))
+                  onPressed: () async {
+                    final testes = await testeCollection.get();
+                    print(testes);
+                  },
+                  child: const Text("Lista teste"),
+                ),
+                ElevatedButton(
+                  onPressed: () async {
+                    await testeCollection.add({'name': 'victor'});
+                  },
+                  child: const Text("Adicionar a lista teste"),
+                ),
+                ElevatedButton(
+                  onPressed: () async {
+                    await testeCollection
+                        .document('EAixG8b9K2cHaFARxllF')
+                        .update({'name': 'corno'});
+                  },
+                  child: const Text("Editar a lista teste"),
+                ),
+                ElevatedButton(
+                  onPressed: () async {
+                    await testeCollection
+                        .document('EAixG8b9K2cHaFARxllF')
+                        .delete();
+                  },
+                  child: const Text("Deletar um elemento da lista teste"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context, '/AuthOrHomePage');
+                  },
+                  child: const Text('VOLTAR TELA INICIAL'),
+                ),
               ],
             ),
           )
