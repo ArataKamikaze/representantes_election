@@ -17,12 +17,13 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   late LoginController controller;
 // Iniciação do controller
-  
+
   @override
   void initState() {
     controller = LoginController(context);
     super.initState();
   }
+
 // Criação de um scaffold, widget de criação de tela padrão, depois tem a chamada de widgets do pack de widgets para personalização de aparência do windows
   @override
   Widget build(BuildContext context) {
@@ -161,7 +162,7 @@ class _LoginPageState extends State<LoginPage> {
                               // Botoes componetizados, chamada de rota para mudança de tela dos aplicativos
                               TextButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, '/register');
+                                  Navigator.pushNamed(context, '/teste');
                                 },
                                 child: const Text("Esqueci minha senha"),
                               ),
@@ -177,7 +178,9 @@ class _LoginPageState extends State<LoginPage> {
                           if (controller.isLoading)
                             const CircularProgressIndicator()
                           else
-                            MainButton(onPressed: controller.submit, child: const Text("Login"))
+                            MainButton(
+                                onPressed: controller.submit,
+                                child: const Text("Login"))
                         ],
                       ),
                     ),

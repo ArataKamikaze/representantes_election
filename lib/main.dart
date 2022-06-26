@@ -10,6 +10,8 @@ const projectId = 'eleicao-representante';
 void main() async {
   firedart.Firestore.initialize(projectId);
   WidgetsFlutterBinding.ensureInitialized();
+
+  
   await Window.initialize();
   runApp(const App());
   doWhenWindowReady(() {

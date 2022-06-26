@@ -1,4 +1,4 @@
-
+import 'package:eleicao_representante/login/register/aregister_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -9,14 +9,11 @@ import 'login/register/auth.dart';
 import 'login/register/auth_or_home_page.dart';
 import 'login/register/register_page.dart';
 
-
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
-
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
@@ -46,6 +43,7 @@ class App extends StatelessWidget {
           "/register": (context) => RegisterPage(),
           "/home": (context) => const HomePage(),
           "/adminPage": (context) => const AdminPage(),
+          "/teste": (context) => const aRegisterPage(),
         },
       ),
     );
