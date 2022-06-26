@@ -1,9 +1,9 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_acrylic/flutter_acrylic.dart';
-import 'app/app.dart';
+import 'app.dart';
 import 'package:firedart/firedart.dart' as firedart;
-
+  
 const apiKey = 'AIzaSyB6fzNGkR9Llmgy8oHOD6QkWMwClpvU0t4';
 const projectId = 'eleicao-representante';
 
