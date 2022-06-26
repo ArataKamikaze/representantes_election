@@ -113,7 +113,7 @@ class LoginController {
           authData['password']!,
         );
       }
-      Navigator.pushNamed(context, "/register");
+      Navigator.pushNamed(context, "/");
     } on AuthException catch (error) {
       _showErrorDialog(error.toString());
     } catch (error) {
