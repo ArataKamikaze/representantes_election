@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firedart/firedart.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -8,12 +10,16 @@ import 'modules/main/containers/profile/profile_container.dart';
 import 'modules/login/pages/register/auth.dart';
 import 'modules/login/pages/register/auth_or_home_page.dart';
 import 'modules/main/main_page.dart';
+import 'package:firedart/firedart.dart' as firedart;
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    firedart.CollectionReference testeCollection =
+        Firestore.instance.collection('teste');
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
@@ -40,7 +46,7 @@ class App extends StatelessWidget {
         initialRoute: "/",
         routes: {
           "/": (context) => const AuthOrHomePage(),
-          "/register": (context) => const AuthOrHomePage(),
+          "/register": (context) => const RegisterPage(),
           "/home": (context) => const HomePage(),
           "/candidacy": (context) => CandidacyContainer(),
           "/profile": (context) => const ProfileContainer(),
