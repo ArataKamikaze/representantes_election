@@ -1,31 +1,32 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
+import 'profile_controller.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../components/button.dart';
-import '../../components/candidate_info.dart';
-import '../../components/candidate_sumary.dart';
 
 class ProfileContainer extends StatefulWidget {
-  const ProfileContainer({Key? key}) : super(key: key);
+  var name = "Jeremy Elbertson";
+  var matricula = "E00110";
+  var email = "CC4MA";
+
+
+  ProfileContainer({
+    Key? key,
+    this.name = "Jeremy Elbertson",
+    this.matricula = "E00110",
+    this.email = "teste@admin.emge.edu.br",
+  }) : super(key: key);
 
   @override
   State<ProfileContainer> createState() => _ProfileContainerState();
 }
 
 class _ProfileContainerState extends State<ProfileContainer> {
-  bool personalInfo = false;
-  bool electionInfo = false;
-
+  
+  var controller = ProfileController();
+  
   @override
   Widget build(BuildContext context) {
-
-    final buttonColors = WindowButtonColors(
-      iconNormal: Colors.white,
-      mouseOver: const Color.fromARGB(36, 5, 5, 5),
-      mouseDown: const Color.fromARGB(12, 0, 0, 0),
-      iconMouseOver: const Color.fromARGB(255, 19, 80, 134),
-      iconMouseDown: const Color.fromARGB(255, 255, 255, 255),
-    );
 
     return Column(
       children: [
@@ -36,9 +37,9 @@ class _ProfileContainerState extends State<ProfileContainer> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                MinimizeWindowButton(colors: buttonColors),
-                MaximizeWindowButton(colors: buttonColors),
-                CloseWindowButton(colors: buttonColors),
+                MinimizeWindowButton(colors: controller.buttonColors),
+                MaximizeWindowButton(colors: controller.buttonColors),
+                CloseWindowButton(colors: controller.buttonColors),
               ],
             ),
           ),
@@ -80,7 +81,7 @@ class _ProfileContainerState extends State<ProfileContainer> {
                       children: [
                         InkWell(
                           onTap: () =>
-                              setState(() => personalInfo = !personalInfo),
+                              setState(() => controller.personalInfo = !controller.personalInfo),
                           child: Container(
                             color: Colors.white,
                             height: 60,
@@ -97,7 +98,7 @@ class _ProfileContainerState extends State<ProfileContainer> {
                                     style: TextStyle(
                                         color: Color(0xff6C757D), fontSize: 20),
                                   ),
-                                  Icon(!personalInfo
+                                  Icon(!controller.personalInfo
                                       ? Icons.chevron_right
                                       : Icons.expand_more)
                                 ],
@@ -105,42 +106,42 @@ class _ProfileContainerState extends State<ProfileContainer> {
                             ),
                           ),
                         ),
-                        !personalInfo
+                        !controller.personalInfo
                             ? Container()
                             : Column(
                                 children: [
                                   Row(
-                                    children: const [
+                                    children: [
                                       Text("Matrícula:"),
                                       SizedBox(
                                         width: 10,
                                       ),
-                                      Text("E00001")
+                                      Text(widget.matricula),
                                     ],
                                   ),
                                   const SizedBox(
                                     height: 30,
                                   ),
                                   Row(
-                                    children: const [
+                                    children: [
                                       Text("Nome:"),
                                       SizedBox(
                                         width: 10,
                                       ),
-                                      Text("ArataKamikaze da Cunha")
+                                      Text(widget.name)
                                     ],
                                   ),
                                   const SizedBox(
                                     height: 30,
                                   ),
                                   Row(
-                                    children: const [
+                                    children: [
                                       Text("E-mail"),
                                       SizedBox(
                                         width: 10,
                                       ),
                                       Text(
-                                          "ArataKamikaze.da.cunha420.69@electronicMail.com")
+                                          widget.email)
                                     ],
                                   ),
                                   const SizedBox(
@@ -153,10 +154,6 @@ class _ProfileContainerState extends State<ProfileContainer> {
                               ),
                         const SizedBox(
                           height: 30,
-                        ),
-                        InkWell(
-                          onTap: () =>
-                              setState(() => electionInfo = !electionInfo),
                         ),
                       ],
                     ),
