@@ -4,32 +4,22 @@ import 'package:flutter/material.dart';
 import '../../../../components/button.dart';
 import '../../components/candidate_info.dart';
 import '../../components/candidate_sumary.dart';
+import 'home_controller.dart';
 
 class HomeContainer extends StatelessWidget {
-  const HomeContainer({Key? key}) : super(key: key);
+  HomeContainer({Key? key}) : super(key: key);
+
+  var controller = HomeController();
+
 
   @override
   Widget build(BuildContext context) {
     List<Widget> candidates = [
        CandidateInfo(),
        CandidateSumary(),
-       CandidateSumary(),
-       CandidateSumary(),
-       CandidateSumary(),
-       CandidateSumary(),
-       CandidateSumary(),
-       CandidateSumary(),
-       CandidateSumary(),
+
     ];
 
-
-    final buttonColors = WindowButtonColors(
-      iconNormal: Colors.white,
-      mouseOver: const Color.fromARGB(36, 5, 5, 5),
-      mouseDown: const Color.fromARGB(12, 0, 0, 0),
-      iconMouseOver: const Color.fromARGB(255, 19, 80, 134),
-      iconMouseDown: const Color.fromARGB(255, 255, 255, 255),
-    );
 
     return Column(
       children: [
@@ -40,9 +30,9 @@ class HomeContainer extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                MinimizeWindowButton(colors: buttonColors),
-                MaximizeWindowButton(colors: buttonColors),
-                CloseWindowButton(colors: buttonColors),
+                MinimizeWindowButton(colors: controller.buttonColors),
+                MaximizeWindowButton(colors: controller.buttonColors),
+                CloseWindowButton(colors: controller.buttonColors),
               ],
             ),
           ),
@@ -62,7 +52,7 @@ class HomeContainer extends StatelessWidget {
                   child: const Align(
                     alignment: Alignment.centerLeft,
                     child:  Text(
-                      "Eleições - 5º Período CC5NA",
+                      "Painel de Administração",
                       style: TextStyle(color: Color(0xff6C757D), fontSize: 20),
                     ),
                   ),
@@ -109,10 +99,6 @@ class HomeContainer extends StatelessWidget {
                         )),
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
-                MainButton(onPressed: () {}, child: const Text("Confirmar Voto"))
               ],
             ),
           ),

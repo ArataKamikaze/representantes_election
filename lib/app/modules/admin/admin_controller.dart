@@ -6,8 +6,8 @@ import 'containers/profile/profile_container.dart';
 class AdminController{
 
   Map<String,Widget> containers = {
-    "home" : const HomeContainer(),
-    "profile" : const ProfileContainer(),
+    "home" :  HomeContainer(),
+    "profile" : ProfileContainer(),
   };
 
   Widget setContainer(String key){
