@@ -1,7 +1,23 @@
 import 'package:flutter/material.dart';
 
 class CandidateSumary extends StatefulWidget {
-  const CandidateSumary({Key? key}) : super(key: key);
+
+  var name = "Nome não encontrado";
+  var matricula = "Error";
+  var sala = "Error";
+  bool hasCheck = false;
+  var bio = "Error";
+  var image = "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png";
+
+  CandidateSumary({
+    Key? key,
+    this.matricula = "E01010",
+    this.name = "Jeremy Elbertson",
+    this.sala = "CC4MA",
+    this.hasCheck = false, 
+    this.bio = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    this.image = "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png"
+    }) : super(key: key);
 
   @override
   State<CandidateSumary> createState() => _CandidateSumaryState();
@@ -21,43 +37,50 @@ class _CandidateSumaryState extends State<CandidateSumary> {
               child: Container(
                 width: 55,
                 height: 55,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   image: DecorationImage(
                     fit: BoxFit.fill,
                     image: NetworkImage(
-                        "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png"),
+                        widget.image),
                   ),
                 ),
               ),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 Text("Nome"),
-                Text("Jeremy Elbertson"),
+                Text(widget.name),
               ],
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children:  [
                 Text("Matrícula"),
-                Text("E019548"),
+                Text(widget.matricula),
               ],
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children:  [
                 Text("Sala"),
-                Text("CC4MA"),
+                Text(widget.sala),
               ],
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text("Bio"),
-                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit ..."),
-              ],
+            SizedBox(
+              width: 150,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children:  [
+                  Text("Bio"),
+                  Text(
+                    widget.bio,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    ),
+                ],
+              ),
             ),
             Checkbox(value: _check, onChanged: (a){
               setState(() {

@@ -99,86 +99,148 @@ class _RegisterPageState extends State<RegisterPage> {
                     child: /*Teste(),*/
                         Form(
                       key: controller.formKey,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                              height: 100,
-                              width: 100,
-                              child: Image.asset("assets/images/logo.png")),
-                          const SizedBox(height: 27),
-                          SizedBox(
-                            width: double.infinity,
-                            child: Text(
-                              "Usuário:",
-                              style: TextStyle(
-                                color: Theme.of(context).colorScheme.secondary,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 5),
-                          // Chamada de um textfield componetizado que chama as funções do controller para autenticação
-                          InputField(
-                            context: context,
-                            controller: controller.userController,
-                            onSaved: (email) =>
-                                controller.authData['email'] = email ?? '',
-                            validator: controller.userValidator,
-                            prefix: Icon(
-                              Icons.perm_identity,
-                              size: 20,
-                              color: Theme.of(context).colorScheme.onBackground,
-                            ),
-                          ),
-                          const SizedBox(height: 27),
-                          SizedBox(
-                            width: double.infinity,
-                            child: Text("Senha:",
+                      child: SingleChildScrollView(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              width: double.infinity,
+                              child: Text(
+                                "Email:",
                                 style: TextStyle(
-                                  color:
-                                      Theme.of(context).colorScheme.secondary,
-                                )),
-                          ),
-                          const SizedBox(height: 5),
-                          // Chamada de um textfield componetizado que chama as funções do controller para autenticação
-                          InputField(
-                            context: context,
-                            obscureText: true,
-                            controller: controller.passController,
-                            onSaved: (password) => controller
-                                .authData['password'] = password ?? '',
-                            validator: controller.passwordValidator,
-                            prefix: Icon(
-                              Icons.lock_outline,
-                              size: 20,
-                              color: Theme.of(context).colorScheme.onBackground,
-                            ),
-                          ),
-                          const SizedBox(height: 5),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              // Botoes componetizados, chamada de rota para mudança de tela dos aplicativos
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.pushNamed(context, '/register');
-                                },
-                                child: const Text("Esqueci minha senha"),
+                                  color: Theme.of(context).colorScheme.secondary,
+                                ),
                               ),
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.pushNamed(context, '/register2');
-                                },
-                                child: const Text("Register"),
-                              )
-                            ],
-                          ),
-                          const SizedBox(height: 5),
-                          if (controller.isLoading)
-                            const CircularProgressIndicator()
-                          else
-                            MainButton(onPressed: controller.submit, child: const Text("Login"))
-                        ],
+                            ),
+                            const SizedBox(height: 5),
+                            // Chamada de um textfield componetizado que chama as funções do controller para autenticação
+                            InputField(
+                              context: context,
+                              controller: controller.userController,
+                              onSaved: (email) =>
+                                  controller.authData['email'] = email ?? '',
+                              validator: controller.userValidator,
+                              prefix: Icon(
+                                Icons.email,
+                                size: 20,
+                                color: Theme.of(context).colorScheme.onBackground,
+                              ),
+                            ),
+                            const SizedBox(height: 15),
+                            SizedBox(
+                              width: double.infinity,
+                              child: Text(
+                                "Nome:",
+                                style: TextStyle(
+                                  color: Theme.of(context).colorScheme.secondary,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 5),
+                            // Chamada de um textfield componetizado que chama as funções do controller para autenticação
+                            InputField(
+                              context: context,
+                              controller: controller.userController,
+                              onSaved: (email) =>
+                                  controller.authData['email'] = email ?? '',
+                              validator: controller.userValidator,
+                              prefix: Icon(
+                                Icons.perm_identity,
+                                size: 20,
+                                color: Theme.of(context).colorScheme.onBackground,
+                              ),
+                            ),
+                            const SizedBox(height: 15),
+                            SizedBox(
+                              width: double.infinity,
+                              child: Text(
+                                "Matricula:",
+                                style: TextStyle(
+                                  color: Theme.of(context).colorScheme.secondary,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 5),
+                            // Chamada de um textfield componetizado que chama as funções do controller para autenticação
+                            InputField(
+                              context: context,
+                              controller: controller.userController,
+                              onSaved: (email) =>
+                                  controller.authData['email'] = email ?? '',
+                              validator: controller.userValidator,
+                              prefix: Icon(
+                                Icons.perm_identity,
+                                size: 20,
+                                color: Theme.of(context).colorScheme.onBackground,
+                              ),
+                            ),
+                            const SizedBox(height: 15),
+                            SizedBox(
+                              width: double.infinity,
+                              child: Text(
+                                "Turma:",
+                                style: TextStyle(
+                                  color: Theme.of(context).colorScheme.secondary,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 5),
+                            // Chamada de um textfield componetizado que chama as funções do controller para autenticação
+                            InputField(
+                              context: context,
+                              controller: controller.userController,
+                              onSaved: (email) =>
+                                  controller.authData['email'] = email ?? '',
+                              validator: controller.userValidator,
+                              prefix: Icon(
+                                Icons.perm_identity,
+                                size: 20,
+                                color: Theme.of(context).colorScheme.onBackground,
+                              ),
+                            ),
+                            const SizedBox(height: 15),
+                            SizedBox(
+                              width: double.infinity,
+                              child: Text("Senha:",
+                                  style: TextStyle(
+                                    color:
+                                        Theme.of(context).colorScheme.secondary,
+                                  )),
+                            ),
+                            const SizedBox(height: 5),
+                            // Chamada de um textfield componetizado que chama as funções do controller para autenticação
+                            InputField(
+                              context: context,
+                              obscureText: true,
+                              controller: controller.passController,
+                              onSaved: (password) => controller
+                                  .authData['password'] = password ?? '',
+                              validator: controller.passwordValidator,
+                              prefix: Icon(
+                                Icons.lock_outline,
+                                size: 20,
+                                color: Theme.of(context).colorScheme.onBackground,
+                              ),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                // Botoes componetizados, chamada de rota para mudança de tela dos aplicativos
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text("cancelar"),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 15),
+                            if (controller.isLoading)
+                              const CircularProgressIndicator()
+                            else
+                              MainButton(onPressed: controller.submit, child: const Text("Cadastrar"))
+                          ],
+                        ),
                       ),
                     ),
                   ),

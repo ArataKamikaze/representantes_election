@@ -1,5 +1,6 @@
-import 'package:eleicao_representante/app/modules/main/components/candidate_header.dart';
 import 'package:flutter/material.dart';
+
+import 'candidate_header.dart';
 
 class CandidateInfo extends StatefulWidget {
   var name = "Nome não encontrado";
