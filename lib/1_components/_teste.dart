@@ -5,6 +5,11 @@ import '../login/register/auth.dart';
 import '../login/register/auth_exception.dart';
 import 'input_field.dart';
 
+//arquivo temporário, para testes de autenticação e cadastro de usuário no sistema de eleição de representantes do aluno e do administrador do sistema. O arquivo será removido posteriormente.
+
+
+
+
 
 enum AuthMode { signUp, login }
 

@@ -26,8 +26,9 @@ class _CandidateHeaderState extends State<CandidateHeader> {
     return Container(
           color: const Color(0xff135085),
           height: 75,
+          padding: EdgeInsets.symmetric(horizontal: 20),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Column(
@@ -86,12 +87,9 @@ class _CandidateHeaderState extends State<CandidateHeader> {
               ),
               widget.hasCheck?
               Checkbox(
-                  value: _check,
-                  onChanged: (a) {
-                    setState(() {
-                      _check = !_check;
-                    });
-                  }):Container(),
+                  value: true,
+                  onChanged: null
+                  ):Container(),
             ],
           ),
         );

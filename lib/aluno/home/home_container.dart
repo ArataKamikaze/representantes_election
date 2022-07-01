@@ -5,24 +5,45 @@ import '../../1_components/button.dart';
 import '../../1_components/candidate_info.dart';
 import '../../1_components/candidate_sumary.dart';
 
-class HomeContainer extends StatelessWidget {
+class HomeContainer extends StatefulWidget {
   const HomeContainer({Key? key}) : super(key: key);
 
   @override
+  State<HomeContainer> createState() => _HomeContainerState();
+}
+
+class _HomeContainerState extends State<HomeContainer> {
+  int selectedCandidate = -1;
+  int candidateCount = 5;
+  List<Map<String, String>> candidates = [
+    {
+      "matricula": "E01010",
+      "name": "Jeremy Elbertson",
+      "sala": "CC4MA",
+      "bio": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "image":
+          "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png"
+    },
+    {
+      "matricula": "E01010",
+      "name": "Jeremy Elbertson",
+      "sala": "CC4MA",
+      "bio": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "image":
+          "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png"
+    },
+    {
+      "matricula": "E01010",
+      "name": "Jeremy Elbertson",
+      "sala": "CC4MA",
+      "bio": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "image":
+          "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png"
+    },
+  ];
+
+  @override
   Widget build(BuildContext context) {
-    List<Widget> candidates = [
-       CandidateInfo(),
-       CandidateSumary(),
-       CandidateSumary(),
-       CandidateSumary(),
-       CandidateSumary(),
-       CandidateSumary(),
-       CandidateSumary(),
-       CandidateSumary(),
-       CandidateSumary(),
-    ];
-
-
     final buttonColors = WindowButtonColors(
       iconNormal: Colors.white,
       mouseOver: const Color.fromARGB(36, 5, 5, 5),
@@ -61,7 +82,7 @@ class HomeContainer extends StatelessWidget {
                   width: double.infinity,
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child:  Text(
+                    child: Text(
                       "Eleições - 5º Período CC5NA",
                       style: TextStyle(color: Color(0xff6C757D), fontSize: 20),
                     ),
@@ -95,11 +116,42 @@ class HomeContainer extends StatelessWidget {
                           ),
                         ),
                         Expanded(
-                            child: ListView.builder(
-                                itemCount: candidates.length,
-                                itemBuilder: (context, index) {
-                                  return candidates[index];
-                                }))
+                          child: ListView.builder(
+                            itemCount: candidates.length - 1,
+                            itemBuilder: (context, index) {
+                              return (index == selectedCandidate)
+                                  ? CandidateInfo(
+                                      matricula: candidates[index]
+                                          ["matricula"]!,
+                                      name: candidates[index]["name"]!,
+                                      sala: candidates[index]["sala"]!,
+                                      bio: candidates[index]["bio"]!,
+                                      onTap: () {
+                                        setState(() {
+                                          selectedCandidate = -1;
+                                        });
+                                        print(index);
+                                        print(selectedCandidate);
+                                      },
+                                    )
+                                  : CandidateSumary(
+                                      matricula: candidates[index]
+                                          ["matricula"]!,
+                                      name: candidates[index]["name"]!,
+                                      sala: candidates[index]["sala"]!,
+                                      bio: candidates[index]["bio"]!,
+                                      image: candidates[index]["image"]!,
+                                      onTap: () {
+                                        setState(() {
+                                          selectedCandidate = index;
+                                        });
+                                        print(index);
+                                        print(selectedCandidate);
+                                      },
+                                    );
+                            },
+                          ),
+                        ),
                       ],
                     ),
                     decoration: BoxDecoration(
@@ -112,7 +164,8 @@ class HomeContainer extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                MainButton(onPressed: () {}, child: const Text("Confirmar Voto"))
+                MainButton(
+                    onPressed: () {}, child: const Text("Confirmar Voto"))
               ],
             ),
           ),
