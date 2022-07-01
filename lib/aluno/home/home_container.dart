@@ -20,25 +20,29 @@ class _HomeContainerState extends State<HomeContainer> {
       "matricula": "E01010",
       "name": "Jeremy Elbertson",
       "sala": "CC4MA",
-      "bio": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "bio": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.",
       "image":
-          "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png"
+          "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png",
+      "motivacoes": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+      
     },
     {
       "matricula": "E01010",
       "name": "Jeremy Elbertson",
       "sala": "CC4MA",
-      "bio": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "bio": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.",
       "image":
-          "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png"
+          "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png",
+      "motivacoes": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
     {
       "matricula": "E01010",
       "name": "Jeremy Elbertson",
       "sala": "CC4MA",
-      "bio": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "bio": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.",
       "image":
-          "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png"
+          "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png",
+      "motivacoes": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     },
   ];
 
@@ -117,7 +121,7 @@ class _HomeContainerState extends State<HomeContainer> {
                         ),
                         Expanded(
                           child: ListView.builder(
-                            itemCount: candidates.length - 1,
+                            itemCount: candidates.length,
                             itemBuilder: (context, index) {
                               return (index == selectedCandidate)
                                   ? CandidateInfo(
@@ -126,12 +130,13 @@ class _HomeContainerState extends State<HomeContainer> {
                                       name: candidates[index]["name"]!,
                                       sala: candidates[index]["sala"]!,
                                       bio: candidates[index]["bio"]!,
+                                      image: candidates[index]["image"]!,
+                                      motivacoes: candidates[index]["motivacoes"]!,
                                       onTap: () {
                                         setState(() {
                                           selectedCandidate = -1;
                                         });
-                                        print(index);
-                                        print(selectedCandidate);
+                                        
                                       },
                                     )
                                   : CandidateSumary(
@@ -145,8 +150,7 @@ class _HomeContainerState extends State<HomeContainer> {
                                         setState(() {
                                           selectedCandidate = index;
                                         });
-                                        print(index);
-                                        print(selectedCandidate);
+                                        
                                       },
                                     );
                             },

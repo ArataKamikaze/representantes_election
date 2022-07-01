@@ -8,7 +8,9 @@ class CandidateInfo extends StatefulWidget {
   var sala = "Error";
   var bio = "Error";
   Function()? onTap = () {};
-  var image = "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png";
+  var image =
+      "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png";
+      var motivacoes = "Error";
 
   CandidateInfo({
     Key? key,
@@ -17,8 +19,10 @@ class CandidateInfo extends StatefulWidget {
     this.sala = "CC4MA",
     this.bio = "Error",
     this.onTap,
-    this.image = "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png",
-    }) : super(key: key);
+    this.image =
+        "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png",
+    this.motivacoes = "Erroaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaar",
+  }) : super(key: key);
 
   @override
   State<CandidateInfo> createState() => _CandidateInfoState();
@@ -31,48 +35,87 @@ class _CandidateInfoState extends State<CandidateInfo> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: widget.onTap,
-      child: Column(
-        children: [
-          CandidateHeader(name: widget.name,matricula: widget.matricula, sala: widget.sala,hasCheck: true,),
-          Container(
-            color: Colors.white,
-            child: Row(
+      child: Container(
+        child: Column(
+          children: [
+            CandidateHeader(
+              name: widget.name,
+              matricula: widget.matricula,
+              sala: widget.sala,
+              hasCheck: true,
+            ),
+            Row(
               children: [
                 Container(
-                  padding: const EdgeInsets.all(10),
-                  child: Container(
-                    width: 200,
-                    height: 300,
-                    decoration: BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.fill,
-                            image: NetworkImage(
-                                widget.image),
-                          ),
-                        ),
-                  ),
-                ),
-                
-                  SizedBox(
+                  child: Image.network(widget.image),
                   height: 300,
-                  width: 700,
-                  child: Column(
-                      children: [
-                        const Text("Descrição"),
-                        Expanded(child: Text(widget.bio)),
-                      ],
+                ),
+                Expanded(
+                  child: Container(
+                    height: 300,
+                    padding: EdgeInsets.all(20),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Biografia",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            width: double.infinity,
+                            color: Colors.grey[200],
+                            child: Text(
+                              widget.bio,
+                              maxLines: null,
+                              style: TextStyle(fontSize: 15,
+                                  color: Colors.grey[600],
+                                  fontWeight: FontWeight.w300,
+                                  letterSpacing: .7,
+                                  height: 1.5,
+                                  decorationColor: Colors.grey[600],
+                                  decorationStyle: TextDecorationStyle.wavy,
+                                  decorationThickness: 1,
+                                  ),
+                            ),
+                          ),
+                          Text(
+                            "Motivações",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          Container(
+                            width: double.infinity,
+                            padding: EdgeInsets.all(10),
+                            color: Colors.grey[200],
+                            child: Text(
+                              widget.motivacoes,
+                              maxLines: null,
+                              style: TextStyle(fontSize: 15,
+                                  color: Colors.grey[600],
+                                  fontWeight: FontWeight.w300,
+                                  letterSpacing: .7,
+                                  height: 1.5,
+                                  decorationColor: Colors.grey[600],
+                                  decorationStyle: TextDecorationStyle.wavy,
+                                  decorationThickness: 1,
+                                  ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
+                  ),
                 ),
               ],
             ),
-          ),
-          Container(
+            Container(
               color: const Color(0xffDDDFE0),
               height: 1,
               width: double.infinity,
             )
-        ],
-      
+          ],
+        ),
       ),
     );
   }
