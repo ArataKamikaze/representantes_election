@@ -24,7 +24,7 @@ class _AdminPageState extends State<AdminPage> {
   }
 
   //variáveis para db\\
-    var imgUrl = "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png";
+    var imgUrl = "https://cdn.discordapp.com/attachments/853795302388662302/992523892356829315/avatar-0484d1625a1c619bacf85f51f872f85b.jpg";
     var email = "e01010@academico.emge.edu.br";
   //variáveis para db\\
 

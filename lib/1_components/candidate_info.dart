@@ -9,7 +9,7 @@ class CandidateInfo extends StatefulWidget {
   var bio = "Error";
   Function()? onTap = () {};
   var image =
-      "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png";
+      "https://cdn.discordapp.com/attachments/853795302388662302/992523892356829315/avatar-0484d1625a1c619bacf85f51f872f85b.jpg";
       var motivacoes = "Error";
 
   CandidateInfo({
@@ -20,7 +20,7 @@ class CandidateInfo extends StatefulWidget {
     this.bio = "Error",
     this.onTap,
     this.image =
-        "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png",
+        "https://cdn.discordapp.com/attachments/853795302388662302/992523892356829315/avatar-0484d1625a1c619bacf85f51f872f85b.jpg",
     this.motivacoes = "Erroaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaar",
   }) : super(key: key);
 

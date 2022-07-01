@@ -7,7 +7,7 @@ class CandidateSumary extends StatefulWidget {
   var sala = "Error";
   bool hasCheck = false;
   var bio = "Error";
-  var image = "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png";
+  var image = "https://cdn.discordapp.com/attachments/853795302388662302/992523892356829315/avatar-0484d1625a1c619bacf85f51f872f85b.jpg";
   Function()? onTap = () {};
 
   CandidateSumary({
@@ -17,7 +17,7 @@ class CandidateSumary extends StatefulWidget {
     this.sala = "CC4MA",
     this.hasCheck = false, 
     this.bio = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-    this.image = "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png",
+    this.image = "https://cdn.discordapp.com/attachments/853795302388662302/992523892356829315/avatar-0484d1625a1c619bacf85f51f872f85b.jpg",
     this.onTap,
     }) : super(key: key);
 

@@ -1,7 +1,7 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
+import 'package:eleicao_representante/1_components/profile_old_elections.dart';
 import 'package:flutter/material.dart';
 import '../../1_components/button.dart';
-
 
 class ProfileContainer extends StatefulWidget {
   const ProfileContainer({Key? key}) : super(key: key);
@@ -14,9 +14,47 @@ class _ProfileContainerState extends State<ProfileContainer> {
   bool personalInfo = false;
   bool electionInfo = false;
 
+  List<Map<String, String>> oldCandidates = [
+    {
+      "matricula": "E01010",
+      "name": "Jeremy Elbertson",
+      "sala": "CC4MA",
+      "image":
+          "https://cdn.discordapp.com/attachments/853795302388662302/992523892356829315/avatar-0484d1625a1c619bacf85f51f872f85b.jpg",
+      "ano": "2020",
+      "semestre": "1",
+    },
+    {
+      "matricula": "E01010",
+      "name": "Jeremy Elbertson",
+      "sala": "CC4MA",
+      "image":
+          "https://cdn.discordapp.com/attachments/853795302388662302/992523892356829315/avatar-0484d1625a1c619bacf85f51f872f85b.jpg",
+      "ano": "2020",
+      "semestre": "1",
+    },
+    {
+      "matricula": "E01010",
+      "name": "Jeremy Elbertson",
+      "sala": "CC4MA",
+      "image":
+          "https://cdn.discordapp.com/attachments/853795302388662302/992523892356829315/avatar-0484d1625a1c619bacf85f51f872f85b.jpg",
+      "ano": "2020",
+      "semestre": "1",
+    },
+    {
+      "matricula": "E01010",
+      "name": "Jeremy Elbertson",
+      "sala": "CC4MA",
+      "image":
+          "https://cdn.discordapp.com/attachments/853795302388662302/992523892356829315/avatar-0484d1625a1c619bacf85f51f872f85b.jpg",
+      "ano": "2020",
+      "semestre": "1",
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
-
     final buttonColors = WindowButtonColors(
       iconNormal: Colors.white,
       mouseOver: const Color.fromARGB(36, 5, 5, 5),
@@ -182,213 +220,26 @@ class _ProfileContainerState extends State<ProfileContainer> {
                         !electionInfo
                             ? Container()
                             : Column(
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 15, vertical: 5),
-                                    decoration: const BoxDecoration(
-                                      border: Border(
-                                        bottom: BorderSide(
-                                          width: 2.0,
-                                          color: Color(0xffededed),
-                                        ),
-                                      ),
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Container(
-                                              width: 40,
-                                              height: 40,
-                                              decoration: const BoxDecoration(
-                                                shape: BoxShape.circle,
-                                                image: DecorationImage(
-                                                  fit: BoxFit.fill,
-                                                  image: NetworkImage(
-                                                      "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png"),
-                                                ),
-                                              ),
-                                            ),
-                                            const SizedBox(
-                                              width: 15,
-                                            ),
-                                            const Text(
-                                                "Robertinho Giraldes - E03821"),
-                                          ],
-                                        ),
-                                        const Text("2021 - 2º semestre - CC4NB "),
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 15, vertical: 5),
-                                    decoration: const BoxDecoration(
-                                      border: Border(
-                                        bottom: BorderSide(
-                                          width: 2.0,
-                                          color: Color(0xffededed),
-                                        ),
-                                      ),
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Container(
-                                              width: 40,
-                                              height: 40,
-                                              decoration: const BoxDecoration(
-                                                shape: BoxShape.circle,
-                                                image: DecorationImage(
-                                                  fit: BoxFit.fill,
-                                                  image: NetworkImage(
-                                                      "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png"),
-                                                ),
-                                              ),
-                                            ),
-                                            const SizedBox(
-                                              width: 15,
-                                            ),
-                                            const Text(
-                                                "Robertinho Giraldes - E03821"),
-                                          ],
-                                        ),
-                                        const Text("2021 - 2º semestre - CC4NB "),
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 15, vertical: 5),
-                                    decoration: const BoxDecoration(
-                                      border: Border(
-                                        bottom: BorderSide(
-                                          width: 2.0,
-                                          color: Color(0xffededed),
-                                        ),
-                                      ),
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Container(
-                                              width: 40,
-                                              height: 40,
-                                              decoration: const BoxDecoration(
-                                                shape: BoxShape.circle,
-                                                image: DecorationImage(
-                                                  fit: BoxFit.fill,
-                                                  image: NetworkImage(
-                                                      "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png"),
-                                                ),
-                                              ),
-                                            ),
-                                            const SizedBox(
-                                              width: 15,
-                                            ),
-                                            const Text(
-                                                "Robertinho Giraldes - E03821"),
-                                          ],
-                                        ),
-                                        const Text("2021 - 2º semestre - CC4NB "),
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 15, vertical: 5),
-                                    decoration: const BoxDecoration(
-                                      border: Border(
-                                        bottom: BorderSide(
-                                          width: 2.0,
-                                          color: Color(0xffededed),
-                                        ),
-                                      ),
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Container(
-                                              width: 40,
-                                              height: 40,
-                                              decoration: const BoxDecoration(
-                                                shape: BoxShape.circle,
-                                                image: DecorationImage(
-                                                  fit: BoxFit.fill,
-                                                  image: NetworkImage(
-                                                      "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png"),
-                                                ),
-                                              ),
-                                            ),
-                                            const SizedBox(
-                                              width: 15,
-                                            ),
-                                            const Text(
-                                                "Robertinho Giraldes - E03821"),
-                                          ],
-                                        ),
-                                        const Text("2021 - 2º semestre - CC4NB "),
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 15, vertical: 5),
-                                    decoration: const BoxDecoration(
-                                      border: Border(
-                                        bottom: BorderSide(
-                                          width: 2.0,
-                                          color: Color(0xffededed),
-                                        ),
-                                      ),
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Container(
-                                              width: 40,
-                                              height: 40,
-                                              decoration: const BoxDecoration(
-                                                shape: BoxShape.circle,
-                                                image: DecorationImage(
-                                                  fit: BoxFit.fill,
-                                                  image: NetworkImage(
-                                                      "https://cdn.discordapp.com/attachments/684958105024331816/971485364218900551/Screenshot_19_6.png"),
-                                                ),
-                                              ),
-                                            ),
-                                            const SizedBox(
-                                              width: 15,
-                                            ),
-                                            const Text(
-                                                "Robertinho Giraldes - E03821"),
-                                          ],
-                                        ),
-                                        const Text("2021 - 2º semestre - CC4NB "),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              )
+                              children: [
+                                ListView.builder(
+                                  itemCount: oldCandidates.length,
+                                  shrinkWrap: true,
+                                  physics: NeverScrollableScrollPhysics(),
+                                  itemBuilder: (context, index) {
+                                    return ProfileOldElections(
+                                      ano: oldCandidates[index]["ano"]!,
+                                      semestre: oldCandidates[index]["semestre"]!,
+                                      matricula: oldCandidates[index]["matricula"]!,
+                                      name: oldCandidates[index]["name"]!,
+                                      sala: oldCandidates[index]["sala"]!);                                
+                                  }
+                                )
+                              ],
+                            )
                       ],
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),

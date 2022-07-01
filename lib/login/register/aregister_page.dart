@@ -37,7 +37,7 @@ class _aRegisterPageState extends fluent.State<aRegisterPage> {
         'name': testeNome,
       });
     }
-
+ 
     updateTeste(String testeName) async {
       await testeCollection.document(selectedId!).update(
         {'name': testeName},

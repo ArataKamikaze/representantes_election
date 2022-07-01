@@ -8,8 +8,8 @@ const apiKey = 'AIzaSyB6fzNGkR9Llmgy8oHOD6QkWMwClpvU0t4';
 const projectId = 'eleicao-representante';
 
 void main() async {
-  firedart.Firestore.initialize(projectId);
   WidgetsFlutterBinding.ensureInitialized();
+  firedart.Firestore.initialize(projectId);
 
   
   await Window.initialize();
